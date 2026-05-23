@@ -1,0 +1,82 @@
+"use client";
+
+import { useRef } from "react";
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Reveal } from "@/components/ui/Reveal";
+
+export function Manifesto() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const imgY = useTransform(scrollYProgress, [0, 1], ["-8%", "12%"]);
+
+  return (
+    <section
+      id="manifesto"
+      ref={ref}
+      className="relative overflow-hidden border-t border-line bg-bg py-24 md:py-32"
+    >
+      <div className="mx-auto max-w-[1280px] px-5 md:px-8">
+        <Reveal>
+          <span className="ds-eyebrow">Manifesto</span>
+        </Reveal>
+
+        {/* frase-conceito gigante */}
+        <Reveal delay={0.05}>
+          <p className="mt-8 ds-display text-[clamp(2rem,6.5vw,5.4rem)]">
+            Capacidade de ver{" "}
+            <span className="text-lime">além</span> de onde
+            <br className="hidden md:block" /> chega o olhar.
+          </p>
+        </Reveal>
+
+        <div className="mt-16 grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <Reveal y={40}>
+            <div className="relative aspect-[16/11] overflow-hidden rounded-xl2 border border-line">
+              <motion.div style={{ y: imgY }} className="absolute inset-0 scale-110">
+                <Image
+                  src="/img/digital.jpg"
+                  alt="Você é um detetive"
+                  fill
+                  className="object-cover"
+                />
+              </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-ink/60 to-transparent" />
+              <div className="absolute bottom-5 left-5">
+                <span className="font-heading text-2xl font-bold uppercase text-t1">
+                  Você é um <span className="text-lime">detetive</span>
+                </span>
+              </div>
+            </div>
+          </Reveal>
+
+          <div>
+            <Reveal>
+              <p className="text-lg leading-relaxed text-t1">
+                Sua missão é documentar e observar o mundo ao seu redor como se
+                nunca o tivesse visto antes.
+              </p>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <p className="mt-5 text-[15px] leading-relaxed text-t2">
+                Tome a frente dos seus passos, colecionando vivências, notando
+                os padrões. Refaça toda a rota se necessário. Foque sua atenção
+                em uma coisa de cada vez, com determinação e amor pelo que faz —
+                e descubra a ti mesmo.
+              </p>
+            </Reveal>
+            <Reveal delay={0.16}>
+              <div className="mt-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-label text-lime">
+                <span className="h-px w-10 bg-lime" />
+                O Segredo Fungi
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
