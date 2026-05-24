@@ -14,8 +14,9 @@ export function Manifesto() {
   const imgY = useTransform(scrollYProgress, [0, 1], ["-8%", "12%"]);
 
   return (
+    <>
+    <div id="manifesto" className="relative" style={{ top: '-78px', marginBottom: '-78px' }} />
     <section
-      id="manifesto"
       ref={ref}
       className="relative overflow-hidden border-t border-line bg-ink py-24 md:py-32"
     >
@@ -75,5 +76,6 @@ export function Manifesto() {
         </div>
       </div>
     </section>
+    </>
   );
 }

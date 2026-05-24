@@ -103,3 +103,7 @@ h1, h2, h3, h4, h5 {
     scroll-behavior: auto !important;
   }
 }
+
+html {
+  scroll-padding-top: 78px;
+}

@@ -5,10 +5,12 @@ import { Marquee } from "@/components/ui/Marquee";
 import { Sobre } from "@/components/Sobre";
 import { Manifesto } from "@/components/Manifesto";
 import { Shop } from "@/components/Shop";
+import { DropDoMes } from "@/components/DropDoMes";
 import { LinhaSegredo } from "@/components/LinhaSegredo";
 import { Studios } from "@/components/Studios";
 import { Som } from "@/components/Som";
 import { Arquivo } from "@/components/Arquivo";
+import { Vibe } from "@/components/Vibe";
 import { Footer } from "@/components/Footer";
 import { AgeGate } from "@/components/AgeGate";
 import { Anamnese } from "@/components/Anamnese";
@@ -40,10 +42,14 @@ export default async function Home() {
         />
         <Sobre />
         <Manifesto />
+        <DropDoMes />
         <LinhaSegredo />
         <Shop products={products} />
         <Studios />
         <Som />
+        <Marquee items={["Made in Brazil", "Since 2023", "Worldwide", "Unlock Your Mind", "Mushroom Hunters"]} variant="brand" />
+        <Vibe />
+        <Marquee items={["Made in Brazil", "Since 2023", "Worldwide", "Unlock Your Mind", "Mushroom Hunters"]} variant="dark" />
 <Arquivo />
       </main>
 

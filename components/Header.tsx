@@ -7,6 +7,7 @@ import { useStore } from "@/components/store";
 const LINKS = [
   { href: "#sobre", label: "Sobre" },
   { href: "#manifesto", label: "Manifesto" },
+  { href: "#drop", label: "Drops" },
   { href: "#segredo", label: "Linha Segredo" },
   { href: "#loja", label: "Loja" },
   { href: "#studios", label: "Studios" },

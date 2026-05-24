@@ -8,12 +8,14 @@ export function Marquee({
   fast = false,
 }: {
   items: string[];
-  variant?: "lime" | "dark";
+  variant?: "lime" | "dark" | "brand";
   fast?: boolean;
 }) {
   const skin =
     variant === "lime"
       ? "bg-brand text-ink"
+      : variant === "brand"
+      ? "bg-brand text-[#ebdfc6] border-y border-brand"
       : "bg-ink text-t1 border-y border-line";
   const track = fast ? "animate-marquee-fast" : "animate-marquee";
 

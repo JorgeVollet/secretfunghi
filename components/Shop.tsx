@@ -28,7 +28,9 @@ export function Shop({ products }: { products: Product[] }) {
     tab === "all" ? products : products.filter((p) => p.category === tab);
 
   return (
-    <section id="loja">
+    <>
+    <div id="loja" className="relative" style={{ top: '-78px', marginBottom: '-78px' }} />
+    <section>
       <Marquee items={MARQUEE_ITEMS} variant="lime" />
 
       <div className="bg-white py-24 md:py-32">
@@ -38,17 +40,10 @@ export function Shop({ products }: { products: Product[] }) {
               <Reveal>
                 <span className="ds-eyebrow !text-ink">A Loja</span>
               </Reveal>
-              <Reveal delay={0.05}>
-                <h2 className="mt-5 ds-display text-[clamp(2.2rem,5vw,4rem)] !text-ink">
-                  Vista o{" "}
-                  <span className="text-lime">segredo</span>
-                </h2>
-              </Reveal>
             </div>
             <Reveal delay={0.1}>
-              <p className="max-w-xs text-sm text-ink/60">
-                Vestuario de compra livre e a linha Segredo de cogumelos
-                funcionais. Envio para todo o Brasil.
+              <p className="max-w-xs text-sm text-ink/60 uppercase">
+                ENVIAMOS PARA TODO O BRASIL.
               </p>
             </Reveal>
           </div>
@@ -96,5 +91,6 @@ export function Shop({ products }: { products: Product[] }) {
 
       <Marquee items={MARQUEE_ITEMS} variant="dark" />
     </section>
+    </>
   );
 }
