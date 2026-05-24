@@ -103,4 +103,6 @@ export function Patreon() {
           ))}
         </RevealGroup>
       </div>
-    </section
+    </section>
+  );
+}

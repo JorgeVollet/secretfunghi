@@ -17,7 +17,6 @@ const COLS = [
     links: [
       { l: "Secret Studios", h: "#studios" },
       { l: "Som · Spotify", h: "#som" },
-      { l: "Patreon", h: "#patreon" },
       { l: "Arquivo", h: "#arquivo" },
     ],
   },

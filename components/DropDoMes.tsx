@@ -73,4 +73,6 @@ export function DropDoMes() {
           openedImageHeight="90vh"
         />
       </div>
-    </
+    </section>
+  );
+}

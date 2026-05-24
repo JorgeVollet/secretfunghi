@@ -21,7 +21,6 @@ export function Arquivo() {
     <section
       id="arquivo"
       className="border-t border-line bg-bg py-16 md:py-24 lg:py-32"
-      style={{ 
     >
       <div className="mx-auto max-w-[1280px] px-5 md:px-8">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -80,4 +79,12 @@ export function Arquivo() {
                   <span className="font-heading text-sm font-semibold text-t1">
                     {p.t}
                   </span>
-                </motion.figcaption
+                </motion.figcaption>
+              </motion.figure>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}

@@ -38,7 +38,6 @@ export function Som() {
     <section
       id="som"
       className="relative overflow-hidden border-t border-line bg-surface/40 py-16 md:py-24 lg:py-32"
-      style={{ 
     >
       {/* camada 1: imagem de fundo com 10% de opacidade */}
       <div className="absolute inset-0 -z-20">
@@ -50,8 +49,8 @@ export function Som() {
         />
       </div>
 
-      {/* camada 2: Plasma por cima da imagem, com mix-blend-mode screen */}
-      <div className="absolute inset-0 -z-10" style={{ mixBlendMode: 'screen' }}>
+      {/* camada 2: Plasma por cima da imagem */}
+      <div className="absolute inset-0 -z-10" style={{ mixBlendMode: "screen" }}>
         <Plasma
           color="#b497cf"
           speed={0.6}
@@ -62,10 +61,10 @@ export function Som() {
         />
       </div>
 
-      <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-10 md:gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">
         {/* player */}
         <Reveal y={40}>
-          <div className="relative overflow-hidden rounded-xl2 border border-line bg-bg p-7">
+          <div className="relative overflow-hidden rounded-xl2 border border-line bg-bg p-5 md:p-7">
             <div
               className="pointer-events-none absolute inset-0 opacity-30"
               style={{
@@ -80,12 +79,12 @@ export function Som() {
                 </span>
                 <Equalizer />
               </div>
-              <div className="mt-6 flex items-center gap-4">
-                <div className="grid h-20 w-20 shrink-0 place-items-center rounded-lg border border-line bg-surface">
-                  <span className="animate-spin-slow text-2xl">✦</span>
+              <div className="mt-5 md:mt-6 flex items-center gap-4">
+                <div className="grid h-16 w-16 md:h-20 md:w-20 shrink-0 place-items-center rounded-lg border border-line bg-surface">
+                  <span className="animate-spin-slow text-xl md:text-2xl">✦</span>
                 </div>
                 <div>
-                  <div className="font-heading text-lg font-bold text-t1">
+                  <div className="font-heading text-base md:text-lg font-bold text-t1">
                     O Segredo Fungi
                   </div>
                   <div className="font-mono text-[11px] text-t3">
@@ -94,7 +93,7 @@ export function Som() {
                 </div>
               </div>
               {/* barra de progresso fake animada */}
-              <div className="mt-6 h-1 overflow-hidden rounded-full bg-line">
+              <div className="mt-5 md:mt-6 h-1 overflow-hidden rounded-full bg-line">
                 <motion.div
                   className="h-full bg-brand"
                   animate={{ width: ["0%", "100%"] }}
@@ -115,5 +114,27 @@ export function Som() {
             <span className="ds-eyebrow">Som · Spotify</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="mt-6 ds-display text-[clamp(2rem,6vw,4rem)]">
-              A trilha do <span className="te
+            <h2 className="mt-5 md:mt-6 ds-display text-[clamp(2rem,6vw,4rem)]">
+              A trilha do <span className="text-brand">segredo</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-4 md:mt-5 text-[14px] md:text-[15px] leading-relaxed text-t2">
+              Uma curadoria de sons que acompanham a estética da marca. Do
+              underground ao experimental — a playlist oficial de O Segredo Fungi
+              no Spotify.
+            </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="mt-7 md:mt-8">
+              <MagneticButton variant="primary" href={SPOTIFY}>
+                Ouvir no Spotify
+                <span aria-hidden>→</span>
+              </MagneticButton>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
