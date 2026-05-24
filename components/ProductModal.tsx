@@ -11,7 +11,7 @@ export function ProductModal() {
     quickView: product,
     closeQuickView,
     addToCart,
-    anamnese,
+    cogumeloAnamneseOk,
     openAnamnese,
   } = useStore();
 
@@ -28,7 +28,7 @@ export function ProductModal() {
   }, [product]);
 
   const open = product !== null;
-  const locked = product?.requiresAnamnese && anamnese !== "done";
+  const locked = product?.requiresAnamnese && !cogumeloAnamneseOk;
   const needsSize = Boolean(product?.sizes?.length);
   const gallery = product?.gallery?.length ? product.gallery : product ? [product.image] : [];
 
@@ -65,7 +65,7 @@ export function ProductModal() {
             <button
               onClick={closeQuickView}
               aria-label="Fechar"
-              className="absolute right-3 top-3 z-10 grid h-9 w-9 place-items-center rounded-md border border-line bg-ink/70 text-t1 transition-colors hover:border-lime hover:text-lime"
+              className="absolute right-3 top-3 z-10 grid h-9 w-9 place-items-center rounded-md border border-line bg-ink/70 text-t1 transition-colors hover:border-brand hover:text-brand"
             >
               ✕
             </button>
@@ -88,7 +88,7 @@ export function ProductModal() {
                       key={g}
                       onClick={() => setActive(i)}
                       className={`relative h-16 w-16 overflow-hidden rounded border ${
-                        i === active ? "border-lime" : "border-line"
+                        i === active ? "border-brand" : "border-line"
                       }`}
                     >
                       <Image src={g} alt="" fill className="object-cover" />
@@ -106,7 +106,7 @@ export function ProductModal() {
               <h3 className="font-heading text-2xl font-bold uppercase text-t1">
                 {product.name}
               </h3>
-              <div className="font-heading text-2xl text-lime">
+              <div className="font-heading text-2xl text-brand">
                 {brl(product.price)}
               </div>
               <p className="text-[13.5px] leading-relaxed text-t2">
@@ -126,7 +126,7 @@ export function ProductModal() {
                         onClick={() => setSize(s)}
                         className={`h-10 min-w-10 rounded-md border px-3 font-mono text-xs transition-colors ${
                           size === s
-                            ? "border-lime bg-lime/10 text-lime"
+                            ? "border-brand bg-brand/10 text-brand"
                             : "border-line text-t2 hover:border-t2"
                         }`}
                       >
@@ -145,7 +145,7 @@ export function ProductModal() {
                 <div className="flex items-center rounded-md border border-line">
                   <button
                     onClick={() => setQty((q) => Math.max(1, q - 1))}
-                    className="h-9 w-9 text-t1 transition-colors hover:text-lime"
+                    className="h-9 w-9 text-t1 transition-colors hover:text-brand"
                   >
                     –
                   </button>
@@ -154,7 +154,7 @@ export function ProductModal() {
                   </span>
                   <button
                     onClick={() => setQty((q) => q + 1)}
-                    className="h-9 w-9 text-t1 transition-colors hover:text-lime"
+                    className="h-9 w-9 text-t1 transition-colors hover:text-brand"
                   >
                     +
                   </button>
@@ -163,8 +163,8 @@ export function ProductModal() {
 
               {/* trava de anamnese (só linha Segredo) */}
               {locked ? (
-                <div className="mt-1 rounded-lg border border-lime/40 bg-lime/[0.06] p-4">
-                  <div className="font-heading text-sm font-semibold text-lime">
+                <div className="mt-1 rounded-lg border border-brand/40 bg-brand/[0.06] p-4">
+                  <div className="font-heading text-sm font-semibold text-brand">
                     ◉ Anamnese necessária
                   </div>
                   <p className="mt-1 text-xs leading-relaxed text-t2">
@@ -173,10 +173,9 @@ export function ProductModal() {
                   </p>
                   <button
                     onClick={() => {
-                      closeQuickView();
                       openAnamnese();
                     }}
-                    className="mt-3 w-full rounded-md bg-lime py-3 font-mono text-[11px] font-bold uppercase tracking-label text-ink transition-colors hover:bg-white"
+                    className="mt-3 w-full rounded-md bg-brand py-3 font-mono text-[11px] font-bold uppercase tracking-label text-ink transition-colors hover:bg-white"
                   >
                     Concluir anamnese →
                   </button>
@@ -187,7 +186,7 @@ export function ProductModal() {
                   whileHover={{ scale: needsSize && !size ? 1 : 1.02 }}
                   whileTap={{ scale: 0.97 }}
                   disabled={needsSize && !size}
-                  className="mt-1 w-full rounded-md bg-lime py-3.5 font-mono text-[11px] font-bold uppercase tracking-label text-ink transition-all hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+                  className="mt-1 w-full rounded-md bg-brand py-3.5 font-mono text-[11px] font-bold uppercase tracking-label text-ink transition-all hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   {needsSize && !size
                     ? "Escolha um tamanho"

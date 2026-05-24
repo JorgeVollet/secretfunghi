@@ -8,7 +8,6 @@ import { Shop } from "@/components/Shop";
 import { LinhaSegredo } from "@/components/LinhaSegredo";
 import { Studios } from "@/components/Studios";
 import { Som } from "@/components/Som";
-import { Patreon } from "@/components/Patreon";
 import { Arquivo } from "@/components/Arquivo";
 import { Footer } from "@/components/Footer";
 import { AgeGate } from "@/components/AgeGate";
@@ -41,12 +40,11 @@ export default async function Home() {
         />
         <Sobre />
         <Manifesto />
-        <Shop products={products} />
         <LinhaSegredo />
+        <Shop products={products} />
         <Studios />
         <Som />
-        <Patreon />
-        <Arquivo />
+<Arquivo />
       </main>
 
       <Footer />

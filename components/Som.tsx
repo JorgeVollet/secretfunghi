@@ -1,8 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 import { Reveal } from "@/components/ui/Reveal";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+
+const Plasma = dynamic(() => import("@/components/ui/Plasma").then(m => m.Plasma), { ssr: false });
 
 const SPOTIFY =
   process.env.NEXT_PUBLIC_SPOTIFY_URL ??
@@ -15,7 +19,7 @@ function Equalizer() {
       {[0.5, 0.9, 0.3, 0.7, 1, 0.45, 0.8].map((h, i) => (
         <motion.span
           key={i}
-          className="w-1.5 rounded-sm bg-lime"
+          className="w-1.5 rounded-sm bg-brand"
           animate={{ height: [`${h * 30}%`, `${h * 100}%`, `${h * 40}%`] }}
           transition={{
             duration: 0.9 + i * 0.12,
@@ -35,6 +39,28 @@ export function Som() {
       id="som"
       className="relative overflow-hidden border-t border-line bg-surface/40 py-24 md:py-32"
     >
+      {/* camada 1: imagem de fundo com 10% de opacidade */}
+      <div className="absolute inset-0 -z-20">
+        <Image
+          src="/img/doseofimagination.png"
+          alt=""
+          fill
+          className="object-cover opacity-10"
+        />
+      </div>
+
+      {/* camada 2: Plasma por cima da imagem, com mix-blend-mode screen */}
+      <div className="absolute inset-0 -z-10" style={{ mixBlendMode: 'screen' }}>
+        <Plasma
+          color="#b497cf"
+          speed={0.6}
+          direction="forward"
+          scale={2.3}
+          opacity={0.3}
+          mouseInteractive={true}
+        />
+      </div>
+
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">
         {/* player */}
         <Reveal y={40}>
@@ -43,7 +69,7 @@ export function Som() {
               className="pointer-events-none absolute inset-0 opacity-30"
               style={{
                 background:
-                  "conic-gradient(from 180deg at 50% 50%, #d6ff4f22, transparent, #d6ff4f22)",
+                  "conic-gradient(from 180deg at 50% 50%, #571c1622, transparent, #571c1622)",
               }}
             />
             <div className="relative">
@@ -69,7 +95,7 @@ export function Som() {
               {/* barra de progresso fake animada */}
               <div className="mt-6 h-1 overflow-hidden rounded-full bg-line">
                 <motion.div
-                  className="h-full bg-lime"
+                  className="h-full bg-brand"
                   animate={{ width: ["0%", "100%"] }}
                   transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
                 />

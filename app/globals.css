@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Explora';
+  src: url('/fonts/Explora-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,7 +14,7 @@
    ============================================================ */
 
 :root {
-  --glow: rgba(214, 255, 79, 0.4);
+  --glow: rgba(87, 28, 22, 0.4);
 }
 
 * {
@@ -28,7 +35,7 @@ body {
 }
 
 ::selection {
-  background: #d6ff4f;
+  background: #571c16;
   color: #0e0f11;
 }
 
@@ -50,11 +57,13 @@ h1, h2, h3, h4, h5 {
 /* ----- utilitários de componente ----- */
 @layer components {
   .ds-label {
-    @apply font-mono text-[10px] uppercase tracking-label text-lime;
+    @apply font-mono text-[10px] uppercase tracking-label text-brand;
   }
   .ds-eyebrow {
-    @apply inline-block font-mono text-[10px] uppercase tracking-label text-lime
-           border-b border-line pb-1.5;
+    @apply inline-block font-mono text-[10px] uppercase tracking-label;
+    color: rgba(255, 255, 255, 0.70);
+    border: 1px solid #571c16;
+    padding: 4px 10px;
   }
   .ds-display {
     @apply font-heading font-bold uppercase leading-[0.92] text-t1;
@@ -79,6 +88,9 @@ h1, h2, h3, h4, h5 {
   .mask-fade-b {
     -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent);
     mask-image: linear-gradient(to bottom, black 70%, transparent);
+  }
+  .font-explora {
+    font-family: 'Explora', cursive;
   }
 }
 

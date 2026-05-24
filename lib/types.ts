@@ -28,8 +28,6 @@ export interface CartItem {
   qty: number;
 }
 
-export type AnamneseStatus = "pending" | "done";
-
 /** Formata número em Real brasileiro. */
 export function brl(value: number): string {
   return value.toLocaleString("pt-BR", {

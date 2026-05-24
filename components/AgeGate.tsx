@@ -16,7 +16,7 @@ export function AgeGate() {
       {show && (
         <motion.div
           key="age-gate-overlay"
-          className="fixed inset-0 z-[80] flex items-center justify-center overflow-hidden px-5"
+          className="fixed inset-0 z-[80] flex items-center justify-center overflow-hidden px-5 bg-ink"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
@@ -24,13 +24,14 @@ export function AgeGate() {
           {/* fundo */}
           <div className="absolute inset-0 -z-10">
             <Image
-              src="/img/look-moto.jpg"
+              src="/img/butterfly-xray.png"
               alt=""
               fill
               priority
-              className="object-cover opacity-20 grayscale"
+              className="object-contain opacity-30"
+              style={{ objectPosition: "center center" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-ink/60 to-ink" />
+            <div className="absolute inset-0 bg-black/70" />
           </div>
 
           <motion.div
@@ -56,11 +57,11 @@ export function AgeGate() {
 
             {!declined ? (
               <>
-                <div className="mt-6 font-mono text-[10px] uppercase tracking-label text-lime">
+                <div className="mt-6 font-mono text-[10px] uppercase tracking-label" style={{ color: '#571c16' }}>
                   Acesso restrito
                 </div>
                 <h1 className="mt-3 ds-display text-5xl">
-                  O Segredo <span className="text-lime">Fungi</span>
+                  O Segredo <span style={{ color: '#571c16' }}>Fungi</span>
                 </h1>
                 <p className="mt-5 text-sm leading-relaxed text-t2">
                   Para entrar você precisa ter{" "}
@@ -72,7 +73,8 @@ export function AgeGate() {
                     onClick={confirmAge}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.96 }}
-                    className="rounded-md bg-lime px-7 py-3.5 font-mono text-[11px] font-bold uppercase tracking-label text-ink transition-colors hover:bg-white"
+                    className="rounded-md px-7 py-3.5 font-mono text-[11px] font-bold uppercase tracking-label text-ink transition-colors hover:bg-white"
+                    style={{ backgroundColor: '#571c16' }}
                   >
                     Tenho 21+ · Entrar
                   </motion.button>
@@ -104,7 +106,8 @@ export function AgeGate() {
                 </p>
                 <button
                   onClick={() => setDeclined(false)}
-                  className="mt-6 font-mono text-[11px] uppercase tracking-wider text-lime hover:underline"
+                  className="mt-6 font-mono text-[11px] uppercase tracking-wider hover:underline"
+                  style={{ color: '#571c16' }}
                 >
                   ← Voltar
                 </button>

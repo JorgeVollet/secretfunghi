@@ -42,7 +42,7 @@ export function Patreon() {
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="mx-auto mt-5 max-w-2xl ds-display text-[clamp(2.2rem,5vw,4rem)]">
-              O círculo <span className="text-lime">secreto</span>
+              O círculo <span className="text-brand">secreto</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
@@ -64,13 +64,13 @@ export function Patreon() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className={`flex h-full flex-col rounded-xl2 border p-7 transition-colors duration-300 ${
                   t.feat
-                    ? "border-lime bg-lime/[0.06] shadow-glow"
-                    : "border-line bg-surface hover:border-lime/40"
+                    ? "border-brand bg-brand/[0.06] shadow-glow"
+                    : "border-line bg-surface hover:border-brand/40"
                 }`}
               >
                 <span
                   className={`font-mono text-[10px] uppercase tracking-wider ${
-                    t.feat ? "text-lime" : "text-t3"
+                    t.feat ? "text-brand" : "text-t3"
                   }`}
                 >
                   {t.tier}
@@ -84,7 +84,7 @@ export function Patreon() {
                       key={p}
                       className="flex gap-2 border-b border-line pb-2.5 text-[13px] text-t2"
                     >
-                      <span className="text-lime">✦</span>
+                      <span className="text-brand">✦</span>
                       {p}
                     </li>
                   ))}
@@ -92,8 +92,8 @@ export function Patreon() {
                 <span
                   className={`mt-6 rounded-md py-3 text-center font-mono text-[11px] font-bold uppercase tracking-label transition-colors ${
                     t.feat
-                      ? "bg-lime text-ink"
-                      : "border border-line text-t1 hover:border-lime hover:text-lime"
+                      ? "bg-brand text-ink"
+                      : "border border-line text-t1 hover:border-brand hover:text-brand"
                   }`}
                 >
                   Apoiar no Patreon

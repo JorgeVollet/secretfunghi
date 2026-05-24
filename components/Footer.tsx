@@ -50,7 +50,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
             <div className="font-heading text-2xl font-bold uppercase text-t1">
-              O Segredo <span className="text-lime">Fungi</span>
+              O Segredo <span className="text-brand">Fungi</span>
             </div>
             <p className="mt-3 max-w-[230px] text-[13px] leading-relaxed text-t3">
               Unlock your mind. Vestuário, cultura e cogumelos funcionais. Made
@@ -67,7 +67,7 @@ export function Footer() {
                   <li key={l.l}>
                     <a
                       href={l.h}
-                      className="text-[13px] text-t2 transition-colors hover:text-lime"
+                      className="text-[13px] text-t2 transition-colors hover:text-brand"
                     >
                       {l.l}
                     </a>
@@ -91,7 +91,7 @@ export function Footer() {
                 {p}
               </span>
             ))}
-            <span className="grid h-10 w-10 place-items-center rounded-full border border-lime font-heading text-xs font-bold text-lime">
+            <span className="grid h-10 w-10 place-items-center rounded-full border border-brand font-heading text-xs font-bold text-brand">
               21+
             </span>
           </div>

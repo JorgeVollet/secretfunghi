@@ -2,8 +2,7 @@ import type { Config } from "tailwindcss";
 
 /**
  * Design System — O Segredo Fungi
- * Cores e tokens herdados 1:1 do design system de referência (REFERENCIA 01).
- * Acento lime #D6FF4F mantido conforme pedido do cliente.
+ * Acento vermelho #571c16 (brand).
  */
 const config: Config = {
   content: [
@@ -22,7 +21,7 @@ const config: Config = {
         t1: "#F5F5F5",        // light text
         t2: "#A1A1A6",        // tertiary text
         t3: "#52525B",        // placeholder text
-        lime: "#D6FF4F",      // accent lime (referência)
+        brand: "#571c16",     // accent brand (vermelho escuro)
       },
       fontFamily: {
         heading: ["var(--font-heading)", "sans-serif"],
@@ -39,8 +38,8 @@ const config: Config = {
         ds: "cubic-bezier(0.4, 0, 0.2, 1)",
       },
       boxShadow: {
-        glow: "0 0 22px rgba(214,255,79,0.35)",
-        "glow-lg": "0 0 48px rgba(214,255,79,0.45)",
+        glow: "0 0 22px rgba(87,28,22,0.35)",
+        "glow-lg": "0 0 48px rgba(87,28,22,0.45)",
       },
       keyframes: {
         marquee: {
@@ -48,8 +47,8 @@ const config: Config = {
           "100%": { transform: "translateX(-50%)" },
         },
         "pulse-glow": {
-          "0%,100%": { boxShadow: "0 0 10px rgba(214,255,79,0.25)" },
-          "50%": { boxShadow: "0 0 26px rgba(214,255,79,0.55)" },
+          "0%,100%": { boxShadow: "0 0 10px rgba(87,28,22,0.25)" },
+          "50%": { boxShadow: "0 0 26px rgba(87,28,22,0.55)" },
         },
         float: {
           "0%,100%": { transform: "translateY(0)" },

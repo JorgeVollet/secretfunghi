@@ -14,7 +14,7 @@ export function ProductCard({ product }: { product: Product }) {
     <motion.article
       onClick={() => openQuickView(product)}
       whileHover="hover"
-      className="group relative cursor-pointer overflow-hidden rounded-xl2 border border-line bg-surface transition-colors duration-300 hover:border-lime/50"
+      className="group relative cursor-pointer"
     >
       {/* imagem */}
       <div className="relative aspect-[4/5] overflow-hidden">
@@ -31,20 +31,18 @@ export function ProductCard({ product }: { product: Product }) {
             className="object-cover"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
-
         {/* selo */}
         <span
-          className={`absolute left-3 top-3 rounded font-mono text-[9px] uppercase tracking-wider px-2 py-1 ${
+          className={`absolute left-3 top-3 rounded font-mono text-[9px] uppercase tracking-wider px-2 py-1 transition-all duration-300 ${
             locked
-              ? "border border-lime/50 bg-lime/[0.15] text-lime"
+              ? "border border-brand/50 bg-brand/[0.15] text-brand group-hover:bg-brand group-hover:border-brand group-hover:text-[#ebdfc6]"
               : "border border-line bg-ink/70 text-t2"
           }`}
         >
           {locked ? "Requer anamnese" : "Compra livre"}
         </span>
         {product.badge && (
-          <span className="absolute right-3 top-3 rounded bg-lime px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-wider text-ink">
+          <span className="absolute right-3 top-3 rounded bg-brand px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-wider text-[#ebdfc6]">
             {product.badge}
           </span>
         )}
@@ -56,7 +54,7 @@ export function ProductCard({ product }: { product: Product }) {
           transition={{ duration: 0.3 }}
           className="absolute inset-x-3 bottom-3"
         >
-          <span className="block rounded-md bg-lime py-2.5 text-center font-mono text-[10px] font-bold uppercase tracking-label text-ink">
+          <span className="block rounded-md bg-brand py-2.5 text-center font-mono text-[10px] font-bold uppercase tracking-label text-[#ebdfc6]">
             Ver produto +
           </span>
         </motion.div>
@@ -64,13 +62,13 @@ export function ProductCard({ product }: { product: Product }) {
 
       {/* info */}
       <div className="p-4">
-        <span className="font-mono text-[9px] uppercase tracking-wider text-t3">
+        <span className="font-mono text-[9px] uppercase tracking-wider" style={{ color: "#30261e" }}>
           {product.line}
         </span>
-        <h3 className="mt-1.5 font-heading text-base font-medium text-t1">
+        <h3 className="mt-1.5 font-heading text-base font-medium" style={{ color: "#442b21" }}>
           {product.name}
         </h3>
-        <div className="mt-2 font-mono text-sm text-lime">
+        <div className="mt-2 font-mono text-sm text-brand">
           {brl(product.price)}
         </div>
       </div>

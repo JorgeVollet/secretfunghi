@@ -20,7 +20,7 @@ export function Arquivo() {
   return (
     <section
       id="arquivo"
-      className="border-t border-line bg-surface/40 py-24 md:py-32"
+      className="border-t border-line bg-bg py-24 md:py-32"
     >
       <div className="mx-auto max-w-[1280px] px-5 md:px-8">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -30,7 +30,7 @@ export function Arquivo() {
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mt-5 ds-display text-[clamp(2.2rem,5vw,4rem)]">
-                O <span className="text-lime">arquivo</span> visual
+                O <span className="text-brand">arquivo</span> visual
               </h2>
             </Reveal>
           </div>
@@ -73,7 +73,7 @@ export function Arquivo() {
                   initial={{ y: 12, opacity: 0.85 }}
                   className="absolute bottom-3 left-3"
                 >
-                  <span className="block font-mono text-[8px] uppercase tracking-wider text-lime">
+                  <span className="block font-mono text-[8px] uppercase tracking-wider text-brand">
                     {p.tag}
                   </span>
                   <span className="font-heading text-sm font-semibold text-t1">

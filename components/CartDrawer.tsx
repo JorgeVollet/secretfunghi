@@ -19,7 +19,7 @@ export function CartDrawer() {
     cartTotal,
     cartCount,
     clearCart,
-    anamnese,
+    cogumeloAnamneseOk,
     openAnamnese,
   } = useStore();
 
@@ -33,7 +33,7 @@ export function CartDrawer() {
   const shipping = cartTotal > 0 ? 24.9 : 0;
   const grand = cartTotal + shipping;
   const segredoPendente =
-    cart.some((i) => i.product.requiresAnamnese) && anamnese !== "done";
+    cart.some((i) => i.product.requiresAnamnese) && !cogumeloAnamneseOk;
 
   return (
     <AnimatePresence>
@@ -67,7 +67,7 @@ export function CartDrawer() {
               <button
                 onClick={closeCart}
                 aria-label="Fechar"
-                className="grid h-9 w-9 place-items-center rounded-md border border-line text-t1 transition-colors hover:border-lime hover:text-lime"
+                className="grid h-9 w-9 place-items-center rounded-md border border-line text-t1 transition-colors hover:border-brand hover:text-brand"
               >
                 ✕
               </button>
@@ -88,7 +88,7 @@ export function CartDrawer() {
                       </p>
                       <button
                         onClick={closeCart}
-                        className="mt-5 font-mono text-[11px] uppercase tracking-wider text-lime hover:underline"
+                        className="mt-5 font-mono text-[11px] uppercase tracking-wider text-brand hover:underline"
                       >
                         ← Continuar comprando
                       </button>
@@ -112,7 +112,7 @@ export function CartDrawer() {
                               </span>
                               <button
                                 onClick={() => removeItem(it.key)}
-                                className="font-mono text-[10px] text-t3 hover:text-lime"
+                                className="font-mono text-[10px] text-t3 hover:text-brand"
                               >
                                 remover
                               </button>
@@ -125,7 +125,7 @@ export function CartDrawer() {
                               <div className="flex items-center rounded border border-line">
                                 <button
                                   onClick={() => setQty(it.key, it.qty - 1)}
-                                  className="h-7 w-7 text-t1 hover:text-lime"
+                                  className="h-7 w-7 text-t1 hover:text-brand"
                                 >
                                   –
                                 </button>
@@ -134,12 +134,12 @@ export function CartDrawer() {
                                 </span>
                                 <button
                                   onClick={() => setQty(it.key, it.qty + 1)}
-                                  className="h-7 w-7 text-t1 hover:text-lime"
+                                  className="h-7 w-7 text-t1 hover:text-brand"
                                 >
                                   +
                                 </button>
                               </div>
-                              <span className="font-mono text-sm text-lime">
+                              <span className="font-mono text-sm text-brand">
                                 {brl(it.product.price * it.qty)}
                               </span>
                             </div>
@@ -153,10 +153,10 @@ export function CartDrawer() {
                 {cart.length > 0 && (
                   <div className="border-t border-line px-5 py-4">
                     {segredoPendente && (
-                      <div className="mb-3 rounded-lg border border-lime/40 bg-lime/[0.06] p-3">
+                      <div className="mb-3 rounded-lg border border-brand/40 bg-brand/[0.06] p-3">
                         <p className="text-xs leading-relaxed text-t2">
                           Há um item da{" "}
-                          <strong className="text-lime">linha Segredo</strong>{" "}
+                          <strong className="text-brand">linha Segredo</strong>{" "}
                           no carrinho. Conclua a anamnese para finalizar a
                           compra.
                         </p>
@@ -165,7 +165,7 @@ export function CartDrawer() {
                             closeCart();
                             openAnamnese();
                           }}
-                          className="mt-2 w-full rounded-md bg-lime py-2.5 font-mono text-[10px] font-bold uppercase tracking-label text-ink"
+                          className="mt-2 w-full rounded-md bg-brand py-2.5 font-mono text-[10px] font-bold uppercase tracking-label text-ink"
                         >
                           Concluir anamnese →
                         </button>
@@ -178,7 +178,7 @@ export function CartDrawer() {
                     <button
                       disabled={segredoPendente}
                       onClick={() => setStage("checkout")}
-                      className="mt-3 w-full rounded-md bg-lime py-3.5 font-mono text-[11px] font-bold uppercase tracking-label text-ink transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+                      className="mt-3 w-full rounded-md bg-brand py-3.5 font-mono text-[11px] font-bold uppercase tracking-label text-ink transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
                     >
                       Ir para o checkout
                     </button>
@@ -201,7 +201,7 @@ export function CartDrawer() {
                       </label>
                       <input
                         placeholder={f}
-                        className="mt-1 h-11 w-full rounded-md border border-line bg-bg px-3.5 text-sm text-t1 outline-none transition-colors placeholder:text-t3 focus:border-lime"
+                        className="mt-1 h-11 w-full rounded-md border border-line bg-bg px-3.5 text-sm text-t1 outline-none transition-colors placeholder:text-t3 focus:border-brand"
                       />
                     </div>
                   ))}
@@ -215,13 +215,13 @@ export function CartDrawer() {
                         onClick={() => setPay(i)}
                         className={`flex w-full items-center gap-3 rounded-md border p-3 text-left text-sm transition-colors ${
                           pay === i
-                            ? "border-lime bg-lime/[0.06] text-t1"
+                            ? "border-brand bg-brand/[0.06] text-t1"
                             : "border-line text-t2"
                         }`}
                       >
                         <span
                           className={`h-3.5 w-3.5 rounded-full border ${
-                            pay === i ? "border-lime bg-lime" : "border-t3"
+                            pay === i ? "border-brand bg-brand" : "border-t3"
                           }`}
                         />
                         {p}
@@ -252,7 +252,7 @@ export function CartDrawer() {
                       setStage("done");
                       clearCart();
                     }}
-                    className="mt-3 w-full rounded-md bg-lime py-3.5 font-mono text-[11px] font-bold uppercase tracking-label text-ink transition-colors hover:bg-white"
+                    className="mt-3 w-full rounded-md bg-brand py-3.5 font-mono text-[11px] font-bold uppercase tracking-label text-ink transition-colors hover:bg-white"
                   >
                     Pagar com Mercado Pago
                   </button>
@@ -273,7 +273,7 @@ export function CartDrawer() {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 200, delay: 0.1 }}
-                  className="grid h-16 w-16 place-items-center rounded-full bg-lime text-2xl text-ink"
+                  className="grid h-16 w-16 place-items-center rounded-full bg-brand text-2xl text-ink"
                 >
                   ✓
                 </motion.span>
@@ -286,7 +286,7 @@ export function CartDrawer() {
                 </p>
                 <button
                   onClick={closeCart}
-                  className="mt-6 rounded-md border border-line px-6 py-3 font-mono text-[11px] uppercase tracking-wider text-t1 hover:border-lime hover:text-lime"
+                  className="mt-6 rounded-md border border-line px-6 py-3 font-mono text-[11px] uppercase tracking-wider text-t1 hover:border-brand hover:text-brand"
                 >
                   Fechar
                 </button>

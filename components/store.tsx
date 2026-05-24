@@ -8,18 +8,20 @@ import {
   useState,
   useCallback,
 } from "react";
-import type { CartItem, Product, AnamneseStatus } from "@/lib/types";
+import type { CartItem, Product } from "@/lib/types";
 
 interface StoreState {
   /* hidratação — evita flash do age gate */
   hydrated: boolean;
 
-  /* age gate */
+  /* age gate — só memória, sem persistência */
   ageOk: boolean;
   confirmAge: () => void;
 
-  /* anamnese */
-  anamnese: AnamneseStatus;
+  /* anamnese de entrada — persistida: indica que o usuário já fez 1× na vida */
+  introAnamneseDone: boolean;
+  /* anamnese de cogumelo — só memória: libera a compra na sessão/pedido atual */
+  cogumeloAnamneseOk: boolean;
   anamneseOpen: boolean;
   openAnamnese: () => void;
   closeAnamnese: () => void;
@@ -45,23 +47,24 @@ interface StoreState {
 
 const StoreContext = createContext<StoreState | null>(null);
 
-const LS_AGE = "sf_age_ok";
-const LS_ANAMNESE = "sf_anamnese";
+const LS_ANAMNESE_INTRO = "sf_anamnese_intro";
 
 export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [hydrated, setHydrated] = useState(false);
   const [ageOk, setAgeOk] = useState(false);
-  const [anamnese, setAnamnese] = useState<AnamneseStatus>("pending");
+  const [introAnamneseDone, setIntroAnamneseDone] = useState(false);
+  const [cogumeloAnamneseOk, setCogumeloAnamneseOk] = useState(false);
   const [anamneseOpen, setAnamneseOpen] = useState(false);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [quickView, setQuickView] = useState<Product | null>(null);
 
-  /* lê o estado persistido no primeiro render do cliente */
+  /* lê apenas o flag de anamnese de entrada no primeiro render do cliente */
   useEffect(() => {
     try {
-      setAgeOk(localStorage.getItem(LS_AGE) === "1");
-      if (localStorage.getItem(LS_ANAMNESE) === "done") setAnamnese("done");
+      setIntroAnamneseDone(
+        localStorage.getItem(LS_ANAMNESE_INTRO) === "done"
+      );
     } catch {
       /* localStorage indisponível — segue com os defaults */
     }
@@ -79,20 +82,14 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
   const confirmAge = useCallback(() => {
     setAgeOk(true);
-    try {
-      localStorage.setItem(LS_AGE, "1");
-    } catch {}
-    /* a anamnese abre logo após o age gate, se ainda estiver pendente */
-    setTimeout(() => {
-      if (anamnese === "pending") setAnamneseOpen(true);
-    }, 650);
-  }, [anamnese]);
+  }, []);
 
   const completeAnamnese = useCallback(() => {
-    setAnamnese("done");
+    setIntroAnamneseDone(true);
     try {
-      localStorage.setItem(LS_ANAMNESE, "done");
+      localStorage.setItem(LS_ANAMNESE_INTRO, "done");
     } catch {}
+    setCogumeloAnamneseOk(true);
     setAnamneseOpen(false);
   }, []);
 
@@ -125,7 +122,11 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     );
   }, []);
 
-  const clearCart = useCallback(() => setCart([]), []);
+  /* ao limpar o carrinho, reseta também o ok de cogumelo — próximo pedido exige nova anamnese */
+  const clearCart = useCallback(() => {
+    setCart([]);
+    setCogumeloAnamneseOk(false);
+  }, []);
 
   const cartCount = useMemo(
     () => cart.reduce((n, i) => n + i.qty, 0),
@@ -140,7 +141,8 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     hydrated,
     ageOk,
     confirmAge,
-    anamnese,
+    introAnamneseDone,
+    cogumeloAnamneseOk,
     anamneseOpen,
     openAnamnese: () => setAnamneseOpen(true),
     closeAnamnese: () => setAnamneseOpen(false),

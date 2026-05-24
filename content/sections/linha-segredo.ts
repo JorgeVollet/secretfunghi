@@ -3,8 +3,8 @@ import type { LinhaSegredoContent } from "../types";
 export const linhaSegredoContent: LinhaSegredoContent = {
   eyebrow: "Linha Segredo · 21+",
 
-  titleStart: "Cogumelos",
-  titleHighlight: "funcionais",
+  titleStart: "LINHA SEGREDO CLOTHING +",
+  titleHighlight: "COGUMELOS FUNCIONAIS",
 
   description:
     "A linha Segredo reúne cogumelos funcionais — produto natural de bem-estar. Para manter tudo seguro e personalizado, esses itens têm uma etapa a mais: a anamnese.",

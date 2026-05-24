@@ -91,7 +91,7 @@ export function Anamnese() {
                   className="h-1 flex-1 overflow-hidden rounded-full bg-line"
                 >
                   <motion.div
-                    className="h-full bg-lime"
+                    className="h-full bg-brand"
                     initial={false}
                     animate={{ width: i <= step ? "100%" : "0%" }}
                     transition={{ duration: 0.4 }}
@@ -100,13 +100,13 @@ export function Anamnese() {
               ))}
             </div>
 
-            <div className="mt-5 font-mono text-[10px] uppercase tracking-label text-lime">
+            <div className="mt-5 font-mono text-[10px] uppercase tracking-label text-brand">
               Anamnese · Passo {step + 1} de {total}
             </div>
 
             {step === 0 && (
               <h2 className="mt-2 ds-display text-3xl">
-                Você é um <span className="text-lime">detetive</span>
+                Você é um <span className="text-brand">detetive</span>
               </h2>
             )}
 
@@ -128,14 +128,14 @@ export function Anamnese() {
                       onClick={() => setPicked({ ...picked, [step]: i })}
                       className={`flex w-full items-center gap-3 rounded-lg border p-3.5 text-left text-sm transition-colors ${
                         chosen === i
-                          ? "border-lime bg-lime/10 text-t1"
+                          ? "border-brand bg-brand/10 text-t1"
                           : "border-line text-t2 hover:border-t2"
                       }`}
                     >
                       <span
                         className={`grid h-4 w-4 shrink-0 place-items-center rounded-full border ${
                           chosen === i
-                            ? "border-lime bg-lime"
+                            ? "border-brand bg-brand"
                             : "border-t3"
                         }`}
                       >
@@ -162,7 +162,7 @@ export function Anamnese() {
                 whileHover={{ scale: chosen === undefined ? 1 : 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 disabled={chosen === undefined}
-                className="rounded-md bg-lime px-6 py-3 font-mono text-[11px] font-bold uppercase tracking-label text-ink transition-all hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
+                className="rounded-md bg-brand px-6 py-3 font-mono text-[11px] font-bold uppercase tracking-label text-ink transition-all hover:bg-white disabled:cursor-not-allowed disabled:opacity-40"
               >
                 {step < total - 1 ? "Continuar →" : "Concluir anamnese"}
               </motion.button>

@@ -41,6 +41,43 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${heading.variable} ${sans.variable} ${mono.variable}`}>
       <body className="grain bg-ink antialiased">
+        <script dangerouslySetInnerHTML={{ __html: `
+  (function() {
+    var speed = 1.2;
+    var BASE = 1.2;
+    var MAX = 5.0;
+
+    // Aguarda o Vanta estar pronto e conecta o mouse
+    function connectMouse() {
+      var effect = window.VANTA && window.VANTA.current;
+      if (!effect || !effect.updateUniforms) {
+        setTimeout(connectMouse, 300);
+        return;
+      }
+
+      document.addEventListener('mousemove', function() {
+        speed = Math.min(speed + 0.5, MAX);
+        effect.options.speed = speed;
+        effect.updateUniforms();
+      }, { passive: true });
+
+      setInterval(function() {
+        if (speed > BASE) {
+          speed = Math.max(speed - 0.15, BASE);
+          effect.options.speed = speed;
+          effect.updateUniforms();
+        }
+      }, 50);
+    }
+
+    // Inicia quando o DOM estiver pronto
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', connectMouse);
+    } else {
+      connectMouse();
+    }
+  })();
+` }} />
         <StoreProvider>{children}</StoreProvider>
       </body>
     </html>

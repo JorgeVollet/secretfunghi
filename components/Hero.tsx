@@ -1,9 +1,14 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+
+const CellsField = dynamic(
+  () => import("@/components/CellsField").then((m) => m.CellsField),
+  { ssr: false }
+);
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const WORDS = ["O", "SEGREDO", "FUNGI"];
@@ -24,27 +29,19 @@ export function Hero() {
       ref={ref}
       className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden"
     >
-      {/* fundo com parallax */}
       <motion.div
         style={{ y: bgY, scale: bgScale }}
         className="absolute inset-0 -z-10"
       >
-        <Image
-          src="/img/look-moto.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover object-top opacity-30 grayscale-[0.2]"
-        />
+        <CellsField />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-bg/80 to-bg" />
       </motion.div>
 
-      {/* glow ambiente */}
-      <div className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-96 w-96 -translate-x-1/2 rounded-full bg-lime/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-96 w-96 -translate-x-1/2 rounded-full bg-brand/10 blur-[120px]" />
 
       <motion.div
         style={{ opacity: fade }}
-        className="mx-auto w-full max-w-[1280px] px-5 pt-28 md:px-8"
+        className="mx-auto w-full max-w-[1280px] px-5 pt-20 md:px-8"
       >
         <motion.span
           initial={{ opacity: 0, y: 14 }}
@@ -64,7 +61,7 @@ export function Hero() {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.9, delay: 0.3 + i * 0.12, ease: EASE }}
               >
-                {w === "FUNGI" ? <span className="text-lime">{w}</span> : w}
+                {w === "FUNGI" ? <span className="text-brand">{w}</span> : w}
               </motion.span>
             </span>
           ))}
@@ -96,7 +93,6 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* indicador de scroll */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -110,7 +106,7 @@ export function Hero() {
           <motion.span
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            className="h-8 w-px bg-gradient-to-b from-lime to-transparent"
+            className="h-8 w-px bg-gradient-to-b from-brand to-transparent"
           />
         </div>
       </motion.div>

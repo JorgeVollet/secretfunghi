@@ -11,26 +11,26 @@ const STATS = [
 
 export function Sobre() {
   return (
-    <section id="sobre" className="relative border-t border-line py-24 md:py-32">
+    <section id="sobre" className="relative border-t border-line bg-white py-24 md:py-32">
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-20">
         {/* imagem */}
         <Reveal y={40} className="relative order-2 lg:order-1">
-          <div className="group relative aspect-[4/5] overflow-hidden rounded-xl2 border border-line">
+          <div className="group relative aspect-[4/5] overflow-hidden rounded-xl2 border border-zinc-200">
             <Image
-              src="/img/look-couple.jpg"
+              src="/img/look-couple.png"
               alt="Cultura O Segredo Fungi"
               fill
               className="object-cover transition-transform duration-700 ease-ds group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
-            <span className="absolute bottom-4 left-4 ds-label text-lime">
+            <span className="absolute bottom-4 left-4 ds-label text-brand">
               Art &amp; Shroom Department
             </span>
           </div>
           {/* selo girando */}
-          <div className="absolute -right-5 -top-5 hidden h-24 w-24 animate-spin-slow rounded-full border border-lime/30 md:block">
+          <div className="absolute -right-5 -top-5 hidden h-[110px] w-[110px] animate-spin-slow rounded-full border border-brand/30 md:block">
             <div className="grid h-full w-full place-items-center">
-              <span className="font-mono text-[8px] uppercase tracking-label text-lime">
+              <span className="font-mono text-[12px] uppercase tracking-label text-brand">
                 ✦ Unlock ✦ Mind
               </span>
             </div>
@@ -40,16 +40,16 @@ export function Sobre() {
         {/* texto */}
         <div className="order-1 lg:order-2">
           <Reveal>
-            <span className="ds-eyebrow">Quem somos · Sobre a marca</span>
+            <span className="ds-eyebrow !text-brand">Quem somos · Sobre a marca</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="mt-6 ds-display text-[clamp(2.2rem,5vw,4rem)]">
+            <h2 className="mt-6 ds-display text-[clamp(2.2rem,5vw,4rem)] !text-ink">
               Mushroom hunters,{" "}
-              <span className="text-lime">based in soul.</span>
+              <span className="text-brand">based in soul.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-t2">
+            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-ink/70">
               <p>
                 O Segredo Fungi nasceu em 2023, no Brasil, no encontro entre
                 cultura de rua, estética Y2K e a curiosidade pelo mundo dos
@@ -68,12 +68,12 @@ export function Sobre() {
             {STATS.map((s) => (
               <RevealItem
                 key={s.k}
-                className="rounded-lg border border-line bg-surface/60 p-4 transition-colors duration-300 hover:border-lime/40"
+                className="rounded-lg border border-zinc-200 bg-zinc-100 p-4 transition-colors duration-300 hover:border-brand/40"
               >
-                <div className="font-heading text-3xl font-bold text-lime">
+                <div className="font-heading text-3xl font-bold text-brand">
                   {s.v}
                 </div>
-                <div className="mt-1 font-mono text-[10px] uppercase tracking-wider text-t3">
+                <div className="mt-1 font-mono text-[10px] uppercase tracking-wider text-ink/50">
                   {s.k}
                 </div>
               </RevealItem>

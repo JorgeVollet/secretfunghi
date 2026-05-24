@@ -17,7 +17,7 @@ export function Manifesto() {
     <section
       id="manifesto"
       ref={ref}
-      className="relative overflow-hidden border-t border-line bg-bg py-24 md:py-32"
+      className="relative overflow-hidden border-t border-line bg-ink py-24 md:py-32"
     >
       <div className="mx-auto max-w-[1280px] px-5 md:px-8">
         <Reveal>
@@ -28,27 +28,23 @@ export function Manifesto() {
         <Reveal delay={0.05}>
           <p className="mt-8 ds-display text-[clamp(2rem,6.5vw,5.4rem)]">
             Capacidade de ver{" "}
-            <span className="text-lime">além</span> de onde
+            <span className="text-brand">além</span> de onde
             <br className="hidden md:block" /> chega o olhar.
           </p>
         </Reveal>
 
         <div className="mt-16 grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal y={40}>
-            <div className="relative aspect-[16/11] overflow-hidden rounded-xl2 border border-line">
-              <motion.div style={{ y: imgY }} className="absolute inset-0 scale-110">
-                <Image
-                  src="/img/digital.jpg"
-                  alt="Você é um detetive"
-                  fill
-                  className="object-cover"
-                />
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-ink/60 to-transparent" />
-              <div className="absolute bottom-5 left-5">
-                <span className="font-heading text-2xl font-bold uppercase text-t1">
-                  Você é um <span className="text-lime">detetive</span>
-                </span>
+            <div className="flex flex-col items-start gap-5">
+              <div className="relative aspect-square w-full max-w-[480px] overflow-hidden">
+                <motion.div style={{ y: imgY }} className="absolute inset-0 scale-110">
+                  <Image
+                    src="/img/eyesecret.png"
+                    alt="Find the Secret"
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
               </div>
             </div>
           </Reveal>
@@ -69,9 +65,10 @@ export function Manifesto() {
               </p>
             </Reveal>
             <Reveal delay={0.16}>
-              <div className="mt-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-label text-lime">
-                <span className="h-px w-10 bg-lime" />
+              <div className="mt-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-label text-brand">
+                <span className="h-px w-10 bg-brand" />
                 O Segredo Fungi
+                <span className="text-t1 text-[9px]">- Find The Secret</span>
               </div>
             </Reveal>
           </div>
