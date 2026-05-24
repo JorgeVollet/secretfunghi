@@ -35,7 +35,7 @@ const DROP_IMAGES = [
 
 export function DropDoMes() {
   return (
-    <section id="drop" className="relative bg-ink py-24 md:py-32" style={{ scrollMarginTop: '-35px' }}>
+    <section id="drop" className="relative bg-ink py-16 md:py-24 lg:py-32">
       <div className="absolute inset-0 z-0">
         <Particles
           particleColors={["#ffffff"]}
@@ -54,7 +54,7 @@ export function DropDoMes() {
           <span className="ds-eyebrow">Drop do Mês</span>
         </Reveal>
         <Reveal delay={0.05}>
-          <h2 className="mt-5 ds-display text-[clamp(2.2rem,5vw,4rem)]">
+          <h2 className="mt-5 ds-display text-[clamp(2rem,6vw,4rem)]">
             Os <span className="text-brand">destaques</span>
           </h2>
         </Reveal>
@@ -73,6 +73,4 @@ export function DropDoMes() {
           openedImageHeight="90vh"
         />
       </div>
-    </section>
-  );
-}
+    </

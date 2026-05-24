@@ -20,8 +20,8 @@ export function Arquivo() {
   return (
     <section
       id="arquivo"
-      className="border-t border-line bg-bg py-24 md:py-32"
-      style={{ scrollMarginTop: '-36px' }}
+      className="border-t border-line bg-bg py-16 md:py-24 lg:py-32"
+      style={{ 
     >
       <div className="mx-auto max-w-[1280px] px-5 md:px-8">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -30,7 +30,7 @@ export function Arquivo() {
               <span className="ds-eyebrow">Arquivo · Arte</span>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="mt-5 ds-display text-[clamp(2.2rem,5vw,4rem)]">
+              <h2 className="mt-5 ds-display text-[clamp(2rem,6vw,4rem)]">
                 O <span className="text-brand">arquivo</span> visual
               </h2>
             </Reveal>
@@ -80,12 +80,4 @@ export function Arquivo() {
                   <span className="font-heading text-sm font-semibold text-t1">
                     {p.t}
                   </span>
-                </motion.figcaption>
-              </motion.figure>
-            ))}
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
+                </motion.figcaption

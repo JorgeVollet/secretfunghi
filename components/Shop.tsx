@@ -28,32 +28,32 @@ export function Shop({ products }: { products: Product[] }) {
     tab === "all" ? products : products.filter((p) => p.category === tab);
 
   return (
-    <section id="loja" className="bg-white" style={{ scrollMarginTop: '-53px' }}>
+    <section id="loja" className="bg-white">
       <Marquee items={MARQUEE_ITEMS} variant="lime" />
 
-      <div className="bg-white py-24 md:py-32">
+      <div className="bg-white py-14 md:py-24 lg:py-32">
         <div className="mx-auto max-w-[1280px] px-5 md:px-8">
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div className="flex flex-col justify-between gap-3 md:gap-6 md:flex-row md:items-end">
             <div>
               <Reveal>
                 <span className="ds-eyebrow !text-ink">A Loja</span>
               </Reveal>
             </div>
             <Reveal delay={0.1}>
-              <p className="max-w-xs text-sm text-ink/60 uppercase">
-                ENVIAMOS PARA TODO O BRASIL.
+              <p className="text-[12px] md:text-sm text-ink/60 uppercase tracking-wider">
+                Enviamos para todo o Brasil.
               </p>
             </Reveal>
           </div>
 
           <Reveal delay={0.12}>
-            <div className="mt-9 flex flex-wrap gap-2">
+            <div className="mt-6 md:mt-9 flex flex-wrap gap-2">
               {TABS.map((t) => (
                 <button
                   key={t.id}
                   onClick={() => setTab(t.id)}
                   className={
-                    "relative rounded-md px-4 py-2 font-mono text-[11px] uppercase tracking-wider transition-colors " +
+                    "relative rounded-md px-4 py-2.5 font-mono text-[11px] uppercase tracking-wider transition-colors min-h-[40px] " +
                     (tab === t.id
                       ? "bg-brand border border-brand text-[#ebdfc6]"
                       : "border border-brand/40 text-brand/60 hover:text-brand")
@@ -67,7 +67,7 @@ export function Shop({ products }: { products: Product[] }) {
 
           <motion.div
             layout
-            className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-5"
+            className="mt-7 md:mt-10 grid grid-cols-2 gap-3 md:gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-5"
           >
             <AnimatePresence mode="popLayout">
               {list.map((p) => (

@@ -34,14 +34,14 @@ const TIERS = [
 
 export function Patreon() {
   return (
-    <section id="patreon" className="border-t border-line py-24 md:py-32">
+    <section id="patreon" className="border-t border-line py-16 md:py-24 lg:py-32">
       <div className="mx-auto max-w-[1280px] px-5 md:px-8">
         <div className="text-center">
           <Reveal>
             <span className="ds-eyebrow">Patreon · Membros</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="mx-auto mt-5 max-w-2xl ds-display text-[clamp(2.2rem,5vw,4rem)]">
+            <h2 className="mx-auto mt-5 max-w-2xl ds-display text-[clamp(2rem,6vw,4rem)]">
               O círculo <span className="text-brand">secreto</span>
             </h2>
           </Reveal>
@@ -103,6 +103,4 @@ export function Patreon() {
           ))}
         </RevealGroup>
       </div>
-    </section>
-  );
-}
+    </section

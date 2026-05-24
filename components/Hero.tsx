@@ -41,18 +41,18 @@ export function Hero() {
 
       <motion.div
         style={{ opacity: fade }}
-        className="mx-auto w-full max-w-[1280px] px-5 pt-20 md:px-8"
+        className="mx-auto w-full max-w-[1280px] px-5 pt-24 pb-16 md:pt-28 md:px-8"
       >
         <motion.span
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="ds-eyebrow"
+          className="ds-eyebrow text-[9px] md:text-[10px]"
         >
           O Segredo Fungi® · Worldwide · Since 2023
         </motion.span>
 
-        <h1 className="mt-7 ds-display text-[clamp(3.4rem,13vw,11rem)]">
+        <h1 className="mt-5 md:mt-7 ds-display text-[clamp(3rem,14vw,11rem)]">
           {WORDS.map((w, i) => (
             <span key={w} className="block overflow-hidden">
               <motion.span
@@ -71,7 +71,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7 }}
-          className="mt-8 max-w-md text-[15px] leading-relaxed text-t2"
+          className="mt-5 md:mt-8 max-w-sm md:max-w-md text-[14px] md:text-[15px] leading-relaxed text-t2"
         >
           Vestuário, cultura e cogumelos funcionais. Capacidade de ver além de
           onde chega o olhar. Unlock your mind.
@@ -81,7 +81,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.85 }}
-          className="mt-9 flex flex-wrap gap-3"
+          className="mt-7 md:mt-9 flex flex-col sm:flex-row gap-3"
         >
           <MagneticButton variant="primary" href="#loja">
             Explorar a loja

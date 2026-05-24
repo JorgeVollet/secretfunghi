@@ -23,7 +23,13 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 86px; /* compensa o header fixo nas âncoras */
+  scroll-padding-top: 64px; /* compensa o header fixo nas âncoras */
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 86px;
+  }
 }
 
 body {
@@ -94,6 +100,26 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+/* ----- mobile: touch e performance ----- */
+@media (max-width: 767px) {
+  /* botões e links com área de toque adequada */
+  a, button {
+    min-height: 40px;
+  }
+
+  /* desativa efeito magnetic/hover pesado no touch */
+  @media (hover: none) {
+    .group:hover .group-hover\:scale-105 {
+      transform: none;
+    }
+  }
+
+  /* scrollbar invisível no mobile (não precisa) */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* respeita quem pediu menos movimento */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -102,9 +128,4 @@ h1, h2, h3, h4, h5 {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 0px;
 }

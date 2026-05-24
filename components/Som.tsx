@@ -37,8 +37,8 @@ export function Som() {
   return (
     <section
       id="som"
-      className="relative overflow-hidden border-t border-line bg-surface/40 py-24 md:py-32"
-      style={{ scrollMarginTop: '70px' }}
+      className="relative overflow-hidden border-t border-line bg-surface/40 py-16 md:py-24 lg:py-32"
+      style={{ 
     >
       {/* camada 1: imagem de fundo com 10% de opacidade */}
       <div className="absolute inset-0 -z-20">
@@ -115,31 +115,5 @@ export function Som() {
             <span className="ds-eyebrow">Som · Spotify</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="mt-6 ds-display text-[clamp(2.2rem,5vw,4rem)]">
-              A trilha do <span className="text-lime">segredo</span>
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mt-5 max-w-md text-[15px] leading-relaxed text-t2">
-              A curadoria sonora da marca, pensada para acompanhar a cultura O
-              Segredo Fungi. Playlists e releases direto no nosso perfil do
-              Spotify.
-            </p>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <div className="mt-8">
-              <MagneticButton variant="primary" href={SPOTIFY}>
-                ♫ Abrir no Spotify
-              </MagneticButton>
-            </div>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <p className="mt-5 break-all font-mono text-[10px] text-t3">
-              {SPOTIFY}
-            </p>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
+            <h2 className="mt-6 ds-display text-[clamp(2rem,6vw,4rem)]">
+              A trilha do <span className="te

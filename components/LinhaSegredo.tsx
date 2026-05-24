@@ -15,44 +15,43 @@ export function LinhaSegredo() {
   return (
     <section
       id="segredo"
-      className="relative overflow-hidden border-t border-line bg-surface/40 py-24 md:py-32"
-      style={{ scrollMarginTop: '-29px' }}
+      className="relative overflow-hidden border-t border-line bg-surface/40 py-16 md:py-24 lg:py-32"
     >
       {/* glow */}
       <div className="pointer-events-none absolute right-0 top-0 h-80 w-80 rounded-full bg-brand/10 blur-[120px]" />
 
-      <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-10 md:gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <Reveal>
             <span className="ds-eyebrow">{c.eyebrow}</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="mt-6 ds-display text-[clamp(2.2rem,5vw,4rem)]">
+            <h2 className="mt-5 md:mt-6 ds-display text-[clamp(2rem,6vw,4rem)]">
               {c.titleStart} <span className="text-brand">{c.titleHighlight}</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-5 text-[15px] leading-relaxed text-t2">
+            <p className="mt-4 md:mt-5 text-[14px] md:text-[15px] leading-relaxed text-t2">
               {c.description}
             </p>
           </Reveal>
 
-          {/* explicação da trava */}
+          {/* cards da trava */}
           <Reveal delay={0.15}>
-            <div className="mt-7 space-y-3">
+            <div className="mt-6 md:mt-7 space-y-2.5 md:space-y-3">
               {c.cards.map((s) => (
                 <div
                   key={s.n}
-                  className="group flex gap-4 rounded-lg border border-line bg-bg/60 p-4 transition-colors duration-300 hover:border-brand/40"
+                  className="group flex gap-3 md:gap-4 rounded-lg border border-line bg-bg/60 p-3.5 md:p-4 transition-colors duration-300 hover:border-brand/40"
                 >
-                  <span className="font-heading text-lg font-bold text-brand">
+                  <span className="font-heading text-base md:text-lg font-bold text-brand shrink-0">
                     {s.n}
                   </span>
                   <div>
                     <div className="font-heading text-sm font-semibold text-t1">
                       {s.t}
                     </div>
-                    <div className="mt-0.5 text-xs leading-relaxed text-t2">
+                    <div className="mt-0.5 text-[12px] md:text-xs leading-relaxed text-t2">
                       {s.d}
                     </div>
                   </div>
@@ -62,7 +61,7 @@ export function LinhaSegredo() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <div className="mt-8">
+            <div className="mt-7 md:mt-8">
               {done ? (
                 <div className="inline-flex items-center gap-2 rounded-md border border-brand/40 bg-brand/10 px-5 py-3.5 font-mono text-[11px] uppercase tracking-label text-brand">
                   <span>✓</span> {c.doneBadge}
@@ -95,7 +94,7 @@ export function LinhaSegredo() {
               {c.advisoryBadge}
             </motion.div>
             <div className="absolute bottom-5 left-5">
-              <div className="font-heading text-xl font-bold uppercase text-t1">
+              <div className="font-heading text-lg md:text-xl font-bold uppercase text-t1">
                 {c.productLine}
               </div>
               <div className="mt-1 font-mono text-[10px] uppercase tracking-wider text-t3">
