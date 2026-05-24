@@ -17,10 +17,12 @@ export function Manifesto() {
     <>
     <div id="manifesto" className="relative" style={{ top: '-78px', marginBottom: '-78px' }} />
     <section
+      id="manifesto"
       ref={ref}
       className="relative overflow-hidden border-t border-line bg-ink py-24 md:py-32"
+      style={{ scrollMarginTop: '-29px' }}
     >
-      <div className="mx-auto max-w-[1280px] px-5 md:px-8">
+      <div className="mx-auto max-w-[1280px] px-5 md:px-8" style={{ marginTop: '-30px' }}>
         <Reveal>
           <span className="ds-eyebrow">Manifesto</span>
         </Reveal>

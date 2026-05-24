@@ -22,7 +22,7 @@ export function LinhaSegredo() {
 
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">
         <div>
-          <Reveal>
+          <Reveal style={{ marginTop: '-20px' }}>
             <span className="ds-eyebrow">{c.eyebrow}</span>
           </Reveal>
           <Reveal delay={0.05}>

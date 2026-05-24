@@ -28,7 +28,7 @@ export function Shop({ products }: { products: Product[] }) {
     tab === "all" ? products : products.filter((p) => p.category === tab);
 
   return (
-    <section id="loja" className="bg-white">
+    <section id="loja" className="bg-white" style={{ scrollMarginTop: '-53px' }}>
       <Marquee items={MARQUEE_ITEMS} variant="lime" />
 
       <div className="bg-white py-24 md:py-32">
