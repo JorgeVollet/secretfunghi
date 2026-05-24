@@ -12,7 +12,7 @@ const STATS = [
 export function Sobre() {
   return (
     <section id="sobre" className="relative border-t border-line bg-white py-24 md:py-32">
-      <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-20">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-20" style={{ marginTop: '-20px' }}>
         {/* imagem */}
         <Reveal y={40} className="relative order-2 lg:order-1">
           <div className="group relative aspect-[4/5] overflow-hidden rounded-xl2 border border-zinc-200">

@@ -16,13 +16,14 @@ export function LinhaSegredo() {
     <section
       id="segredo"
       className="relative overflow-hidden border-t border-line bg-surface/40 py-24 md:py-32"
+      style={{ scrollMarginTop: '-29px' }}
     >
       {/* glow */}
       <div className="pointer-events-none absolute right-0 top-0 h-80 w-80 rounded-full bg-brand/10 blur-[120px]" />
 
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">
         <div>
-          <Reveal style={{ marginTop: '-20px' }}>
+          <Reveal>
             <span className="ds-eyebrow">{c.eyebrow}</span>
           </Reveal>
           <Reveal delay={0.05}>
