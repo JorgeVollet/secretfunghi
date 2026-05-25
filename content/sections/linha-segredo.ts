@@ -4,7 +4,7 @@ export const linhaSegredoContent: LinhaSegredoContent = {
   eyebrow: "Linha Segredo · 21+",
 
   titleStart: "COGUMELOS",
-  titleHighlight: "MÁGICOS",
+  titleHighlight: "FUNCIONAIS",
 
   description:
     "A Segredo reúne strains e blends funcionais pensados para corpo, mente e consciência. Do foco ao silêncio mental. Da presença à expansão. Para manter tudo seguro, humano e personalizado, o acesso à Linha Segredo exige uma etapa a mais: a anamnese.",
@@ -27,7 +27,7 @@ export const linhaSegredoContent: LinhaSegredoContent = {
     },
   ],
 
-  ctaLabel: "Fazer a anamnese",
+  ctaLabel: "Fazer anamnese para liberar 21+ Shop",
   doneBadge: "Anamnese concluída — linha Segredo liberada",
 
   imageSrc: "/img/linhasegredocomelo.png",

@@ -23,7 +23,8 @@ import { ProductModal } from "@/components/ProductModal";
  * ou catálogo mock caso contrário.
  */
 export default async function Home() {
-  const products = await getProducts();
+  const allProducts = await getProducts();
+  const products = allProducts.filter((p) => !p.requiresAnamnese);
 
   return (
     <>

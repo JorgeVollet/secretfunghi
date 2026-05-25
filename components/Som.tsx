@@ -112,7 +112,7 @@ export function Som() {
         {/* texto */}
         <div>
           <Reveal>
-            <span className="ds-eyebrow">Som · Spotify</span>
+            <span className="ds-eyebrow" style={{ color: '#ebdfc6' }}>Som · Spotify</span>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="mt-5 md:mt-6 ds-display text-[clamp(2rem,6vw,4rem)]">
@@ -122,7 +122,7 @@ export function Som() {
           <Reveal delay={0.1}>
             <p className="mt-4 md:mt-5 text-[14px] md:text-[15px] leading-relaxed text-t2">
               Uma curadoria de sons que acompanham a estética da marca. Do
-              underground ao experimental — a playlist oficial de O Segredo Fungi
+              underground ao experimental, a playlist oficial de O Segredo Fungi
               no Spotify.
             </p>
           </Reveal>

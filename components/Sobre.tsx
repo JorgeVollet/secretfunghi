@@ -11,7 +11,7 @@ const STATS = [
 
 export function Sobre() {
   return (
-    <section id="sobre" className="relative border-t border-line bg-white py-16 md:py-24 lg:py-32">
+    <section id="sobre" className="relative border-t border-zinc-200 bg-white py-16 md:py-24 lg:py-32">
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-10 px-5 md:px-8 lg:grid-cols-2 lg:gap-20">
         {/* texto — primeiro no mobile */}
         <div className="order-1 lg:order-2">

@@ -6,7 +6,7 @@ import type { Product } from "@/lib/types";
 import { brl } from "@/lib/types";
 import { useStore } from "@/components/store";
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({ product, hideLockBadge = false }: { product: Product; hideLockBadge?: boolean }) {
   const { openQuickView } = useStore();
   const locked = product.requiresAnamnese;
 
@@ -32,15 +32,17 @@ export function ProductCard({ product }: { product: Product }) {
           />
         </motion.div>
         {/* selo */}
-        <span
-          className={`absolute left-3 top-3 rounded font-mono text-[9px] uppercase tracking-wider px-2 py-1 transition-all duration-300 ${
-            locked
-              ? "border border-brand/50 bg-brand/[0.15] text-brand group-hover:bg-brand group-hover:border-brand group-hover:text-[#ebdfc6]"
-              : "border border-line bg-ink/70 text-t2"
-          }`}
-        >
-          {locked ? "Requer anamnese" : "Compra livre"}
-        </span>
+        {!hideLockBadge && (
+          <span
+            className={`absolute left-3 top-3 rounded font-mono text-[9px] uppercase tracking-wider px-2 py-1 transition-all duration-300 ${
+              locked
+                ? "border border-brand/50 bg-brand/[0.15] text-brand group-hover:bg-brand group-hover:border-brand group-hover:text-[#ebdfc6]"
+                : "border border-white/30 bg-black/70 text-white"
+            }`}
+          >
+            {locked ? "Requer anamnese" : "Compra livre"}
+          </span>
+        )}
         {product.badge && (
           <span className="absolute right-3 top-3 rounded bg-brand px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-wider text-[#ebdfc6]">
             {product.badge}
@@ -61,11 +63,11 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       {/* info */}
-      <div className="p-4">
-        <span className="font-mono text-[9px] uppercase tracking-wider" style={{ color: "#30261e" }}>
+      <div className="p-4 bg-white">
+        <span className="font-mono text-[9px] uppercase tracking-wider text-ink/50">
           {product.line}
         </span>
-        <h3 className="mt-1.5 font-heading text-base font-medium" style={{ color: "#442b21" }}>
+        <h3 className="mt-1.5 font-heading text-base font-medium text-ink">
           {product.name}
         </h3>
         <div className="mt-2 font-mono text-sm text-brand">

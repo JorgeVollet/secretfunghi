@@ -19,7 +19,6 @@ type Tab = "all" | ProductCategory;
 const TABS: { id: Tab; label: string }[] = [
   { id: "all", label: "Tudo" },
   { id: "vestuario", label: "Vestuario" },
-  { id: "segredo", label: "Linha Segredo" },
 ];
 
 export function Shop({ products }: { products: Product[] }) {
@@ -56,7 +55,7 @@ export function Shop({ products }: { products: Product[] }) {
                     "relative rounded-md px-4 py-2.5 font-mono text-[11px] uppercase tracking-wider transition-colors min-h-[40px] " +
                     (tab === t.id
                       ? "bg-brand border border-brand text-[#ebdfc6]"
-                      : "border border-brand/40 text-brand/60 hover:text-brand")
+                      : "border border-brand/40 bg-zinc-100 text-brand/60 hover:text-brand")
                   }
                 >
                   {t.label}

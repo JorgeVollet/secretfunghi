@@ -17,17 +17,13 @@ export function Manifesto() {
     <section
       id="manifesto"
       ref={ref}
-      className="relative overflow-hidden border-t border-line bg-ink py-16 md:py-24 lg:py-32"
+      className="relative overflow-hidden border-t border-zinc-200 bg-white py-16 md:py-24 lg:py-32"
       style={{ scrollMarginTop: '-39px' }}
     >
       <div className="mx-auto max-w-[1280px] px-5 md:px-8">
-        <Reveal>
-          <span className="ds-eyebrow">Manifesto</span>
-        </Reveal>
-
         {/* frase-conceito gigante */}
         <Reveal delay={0.05}>
-          <p className="mt-6 md:mt-8 ds-display text-[clamp(1.9rem,7vw,5.4rem)]">
+          <p className="mt-6 md:mt-8 ds-display text-[clamp(1.9rem,7vw,5.4rem)]" style={{ color: '#ebdfc6' }}>
             Capacidade de ver{" "}
             <span className="text-brand">além</span> de onde
             <br className="hidden md:block" /> chega o olhar.
@@ -52,13 +48,13 @@ export function Manifesto() {
 
           <div>
             <Reveal>
-              <p className="text-base md:text-lg leading-relaxed text-t1">
+              <p className="text-base md:text-lg leading-relaxed text-ink">
                 Sua missão é documentar e observar o mundo ao seu redor como se
                 nunca o tivesse visto antes.
               </p>
             </Reveal>
             <Reveal delay={0.08}>
-              <p className="mt-4 md:mt-5 text-[14px] md:text-[15px] leading-relaxed text-t2">
+              <p className="mt-4 md:mt-5 text-[14px] md:text-[15px] leading-relaxed text-ink/60">
                 Tome a frente dos seus passos, colecionando vivências, notando
                 os padrões. Refaça toda a rota se necessário. Foque sua atenção
                 em uma coisa de cada vez, com determinação e amor pelo que faz —
@@ -69,7 +65,7 @@ export function Manifesto() {
               <div className="mt-7 md:mt-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-label text-brand">
                 <span className="h-px w-10 bg-brand" />
                 O Segredo Fungi
-                <span className="text-t1 text-[9px]">- Find The Secret</span>
+                <span className="text-ink/60 text-[9px]">- Find The Secret</span>
               </div>
             </Reveal>
           </div>

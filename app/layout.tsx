@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono, Anton } from "next/font/google";
 import { StoreProvider } from "@/components/store";
+import { ComingSoon } from "@/components/ComingSoon";
 import "./globals.css";
 
 const heading = Space_Grotesk({
@@ -21,6 +22,12 @@ const mono = JetBrains_Mono({
   weight: ["400", "500"],
   display: "swap",
 });
+const anton = Anton({
+  subsets: ["latin"],
+  variable: "--font-anton",
+  weight: "400",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "O Segredo Fungi — Unlock Your Mind",
@@ -39,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${heading.variable} ${sans.variable} ${mono.variable}`}>
+    <html lang="pt-BR" className={`${heading.variable} ${sans.variable} ${mono.variable} ${anton.variable}`}>
       <body className="grain bg-ink antialiased">
         <script dangerouslySetInnerHTML={{ __html: `
   (function() {
@@ -78,7 +85,9 @@ export default function RootLayout({
     }
   })();
 ` }} />
-        <StoreProvider>{children}</StoreProvider>
+        <StoreProvider>
+          <ComingSoon>{children}</ComingSoon>
+        </StoreProvider>
       </body>
     </html>
   );

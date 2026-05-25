@@ -51,11 +51,11 @@ export function DropDoMes() {
       </div>
       <div className="relative z-10 mx-auto max-w-[1280px] px-5 md:px-8 mb-12">
         <Reveal>
-          <span className="ds-eyebrow">Drop do Mês</span>
+          <span className="ds-eyebrow" style={{ color: '#ebdfc6' }}>New Stuff</span>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="mt-5 ds-display text-[clamp(2rem,6vw,4rem)]">
-            Os <span className="text-brand">destaques</span>
+            Mês de <span className="text-brand">Maio</span>
           </h2>
         </Reveal>
       </div>

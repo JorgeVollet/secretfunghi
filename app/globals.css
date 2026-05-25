@@ -27,8 +27,8 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #a1a1a6;
+  background-color: #ffffff;
+  color: #1a1a1a;
   font-family: var(--font-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -41,16 +41,16 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-heading), sans-serif;
-  color: #f5f5f5;
+  color: #0a0a0a;
 }
 
 /* ----- scrollbar ----- */
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-track { background: #ffffff; }
 ::-webkit-scrollbar-thumb {
-  background: #23252b;
+  background: #d4d4d8;
   border-radius: 6px;
-  border: 2px solid #0a0a0a;
+  border: 2px solid #ffffff;
 }
 ::-webkit-scrollbar-thumb:hover { background: #52525b; }
 
@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5 {
   }
   .ds-eyebrow {
     @apply inline-block font-mono text-[10px] uppercase tracking-label;
-    color: rgba(255, 255, 255, 0.70);
+    color: rgba(10, 10, 10, 0.70);
     border: 1px solid #571c16;
     padding: 4px 10px;
   }

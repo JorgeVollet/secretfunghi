@@ -21,22 +21,22 @@ export function Arquivo() {
     <section
       id="arquivo"
       style={{ scrollMarginTop: '-36px' }}
-      className="border-t border-line bg-bg py-16 md:py-24 lg:py-32"
+      className="border-t border-zinc-200 bg-white py-16 md:py-24 lg:py-32"
     >
       <div className="mx-auto max-w-[1280px] px-5 md:px-8">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <Reveal>
-              <span className="ds-eyebrow">Arquivo · Arte</span>
+              <span className="ds-eyebrow" style={{ color: '#0A0A0A' }}>Arquivo · Arte</span>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="mt-5 ds-display text-[clamp(2rem,6vw,4rem)]">
-                O <span className="text-brand">arquivo</span> visual
+              <h2 className="mt-5 ds-display text-[clamp(2rem,6vw,4rem)]" style={{ color: '#ebdfc6' }}>
+                THE SECRET <span className="text-brand">ARCHIVE</span>
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.1}>
-            <p className="max-w-xs text-sm text-t2">
+            <p className="max-w-xs text-sm text-ink/60">
               Cartazes, colagens, editoriais e posts. Tudo que a marca produz,
               reunido num só lugar.
             </p>
@@ -53,7 +53,7 @@ export function Arquivo() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: (i % 4) * 0.06 }}
-                className={`group relative overflow-hidden rounded-lg border border-line ${p.span}`}
+                className={`group relative overflow-hidden rounded-lg border border-zinc-200 ${p.span}`}
               >
                 <motion.div
                   variants={{ h: { scale: 1.08 } }}
@@ -77,7 +77,7 @@ export function Arquivo() {
                   <span className="block font-mono text-[8px] uppercase tracking-wider text-brand">
                     {p.tag}
                   </span>
-                  <span className="font-heading text-sm font-semibold text-t1">
+                  <span className="font-heading text-sm font-semibold text-white">
                     {p.t}
                   </span>
                 </motion.figcaption>

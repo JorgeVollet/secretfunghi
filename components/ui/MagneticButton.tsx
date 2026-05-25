@@ -11,8 +11,8 @@ const base =
   "cursor-pointer select-none transition-colors duration-200";
 
 const styles: Record<Variant, string> = {
-  primary: "bg-brand text-ink hover:bg-white",
-  ghost: "border border-line text-t1 hover:border-t2 hover:bg-white/[0.03]",
+  primary: "bg-brand text-[#ebdfc6] hover:bg-white hover:text-ink",
+  ghost: "border border-brand text-brand hover:border-brand/70 hover:bg-brand/[0.05]",
   "lime-ghost":
     "border border-brand/40 text-brand hover:bg-brand/10 hover:border-brand",
 };

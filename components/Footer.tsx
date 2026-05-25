@@ -33,7 +33,7 @@ const COLS = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-ink">
+    <footer className="border-t border-zinc-200 bg-white">
       <Marquee
         variant="dark"
         items={[
@@ -49,17 +49,17 @@ export function Footer() {
         {/* marca + colunas */}
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-10">
           <div className="col-span-2 md:col-span-1">
-            <div className="font-heading text-xl md:text-2xl font-bold uppercase text-t1">
+            <div className="font-heading text-xl md:text-2xl font-bold uppercase text-ink">
               O Segredo <span className="text-brand">Fungi</span>
             </div>
-            <p className="mt-3 max-w-[230px] text-[12px] md:text-[13px] leading-relaxed text-t3">
+            <p className="mt-3 max-w-[230px] text-[12px] md:text-[13px] leading-relaxed text-ink/40">
               Unlock your mind. Vestuário, cultura e cogumelos funcionais. Made
               in Brazil, since 2023.
             </p>
           </div>
           {COLS.map((c) => (
             <div key={c.h}>
-              <h5 className="font-mono text-[10px] uppercase tracking-label text-t3">
+              <h5 className="font-mono text-[10px] uppercase tracking-label text-ink/40">
                 {c.h}
               </h5>
               <ul className="mt-3 md:mt-4 space-y-2 md:space-y-2.5">
@@ -67,7 +67,7 @@ export function Footer() {
                   <li key={l.l}>
                     <a
                       href={l.h}
-                      className="text-[13px] text-t2 transition-colors hover:text-brand"
+                      className="text-[13px] text-ink/60 transition-colors hover:text-brand"
                     >
                       {l.l}
                     </a>
@@ -79,15 +79,15 @@ export function Footer() {
         </div>
 
         {/* rodapé legal */}
-        <div className="mt-10 md:mt-14 flex flex-col gap-4 border-t border-line pt-6 md:pt-7 md:flex-row md:items-center md:justify-between">
-          <span className="font-mono text-[10px] uppercase tracking-wider text-t3">
+        <div className="mt-10 md:mt-14 flex flex-col gap-4 border-t border-zinc-200 pt-6 md:pt-7 md:flex-row md:items-center md:justify-between">
+          <span className="font-mono text-[10px] uppercase tracking-wider text-ink/40">
             © 2026 O Segredo Fungi® · Todos os direitos reservados
           </span>
           <div className="flex flex-wrap items-center gap-2">
             {["Pix", "Cartão", "Boleto", "Mercado Pago"].map((p) => (
               <span
                 key={p}
-                className="rounded border border-line px-2.5 py-1 font-mono text-[9px] uppercase tracking-wider text-t2"
+                className="rounded border border-zinc-200 px-2.5 py-1 font-mono text-[9px] uppercase tracking-wider text-ink/60"
               >
                 {p}
               </span>
@@ -97,7 +97,7 @@ export function Footer() {
             </span>
           </div>
         </div>
-        <p className="mt-5 font-mono text-[10px] text-t3">
+        <p className="mt-5 font-mono text-[10px] text-ink/40">
           Site desenvolvido por JV Web Studio.
         </p>
       </div>

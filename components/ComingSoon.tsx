@@ -67,12 +67,23 @@ export function ComingSoon({ children }: ComingSoonProps) {
   // enquanto não montou no cliente, não renderiza nada (evita hydration mismatch)
   if (!mounted) return null;
 
-  if (unlocked) return <>{children}</>;
-
   return (
     <>
-      {/* ── Tela de Coming Soon ─────────────────────────────── */}
-      <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white overflow-hidden">
+      {/* ── Site sempre montado por baixo — evita remount que quebra o layout ── */}
+      <div style={{ visibility: unlocked ? "visible" : "hidden", pointerEvents: unlocked ? "auto" : "none" }}>
+        {children}
+      </div>
+
+      {/* ── Tela de Coming Soon — some com AnimatePresence ─────────────────── */}
+      <AnimatePresence>
+      {!unlocked && (
+      <motion.div
+        key="coming-soon-overlay"
+        initial={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white overflow-hidden"
+      >
 
         {/* Fundo de células — vermelho escuro + terra cota, igual à Hero */}
         <div className="absolute inset-0 opacity-55">
@@ -109,7 +120,7 @@ export function ComingSoon({ children }: ComingSoonProps) {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
             <Image
-              src="/logo-the-secret-preto.png"
+              src="/logo-the-secret-oficial.png"
               alt="The Secret Fungi"
               width={160}
               height={160}
@@ -121,7 +132,7 @@ export function ComingSoon({ children }: ComingSoonProps) {
           {/* Título */}
           <div className="overflow-hidden">
             <motion.h1
-              className="font-['Anton',_sans-serif] text-[clamp(1.6rem,6vw,4rem)] uppercase leading-none tracking-tight text-black"
+              className="font-[var(--font-anton)] text-[clamp(1.6rem,6vw,4rem)] uppercase leading-none tracking-tight text-black"
               initial={{ y: "110%" }}
               animate={{ y: 0 }}
               transition={{ duration: 0.85, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -156,7 +167,9 @@ export function ComingSoon({ children }: ComingSoonProps) {
         >
           Staff Only
         </motion.button>
-      </div>
+      </motion.div>
+      )}
+      </AnimatePresence>
 
       {/* ── Modal de login ──────────────────────────────────── */}
       <AnimatePresence>
@@ -190,7 +203,7 @@ export function ComingSoon({ children }: ComingSoonProps) {
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-black/40">
                     Restricted Access
                   </span>
-                  <h2 className="font-['Anton',_sans-serif] text-2xl uppercase tracking-tight text-black">
+                  <h2 className="font-[var(--font-anton)] text-2xl uppercase tracking-tight text-black">
                     Staff Only
                   </h2>
                 </div>

@@ -34,7 +34,7 @@ const TIERS = [
 
 export function Patreon() {
   return (
-    <section id="patreon" className="border-t border-line py-16 md:py-24 lg:py-32">
+    <section id="patreon" className="border-t border-zinc-200 bg-white py-16 md:py-24 lg:py-32">
       <div className="mx-auto max-w-[1280px] px-5 md:px-8">
         <div className="text-center">
           <Reveal>
@@ -46,7 +46,7 @@ export function Patreon() {
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-4 max-w-md text-sm text-t2">
+            <p className="mx-auto mt-4 max-w-md text-sm text-ink/60">
               Acesso de membro: conteúdo exclusivo, drops antecipados e a
               biblioteca da marca no Patreon.
             </p>
@@ -65,24 +65,24 @@ export function Patreon() {
                 className={`flex h-full flex-col rounded-xl2 border p-7 transition-colors duration-300 ${
                   t.feat
                     ? "border-brand bg-brand/[0.06] shadow-glow"
-                    : "border-line bg-surface hover:border-brand/40"
+                    : "border-zinc-200 bg-zinc-100 hover:border-brand/40"
                 }`}
               >
                 <span
                   className={`font-mono text-[10px] uppercase tracking-wider ${
-                    t.feat ? "text-brand" : "text-t3"
+                    t.feat ? "text-brand" : "text-ink/40"
                   }`}
                 >
                   {t.tier}
                 </span>
-                <span className="mt-2 font-heading text-3xl font-bold uppercase text-t1">
+                <span className="mt-2 font-heading text-3xl font-bold uppercase text-ink">
                   {t.name}
                 </span>
                 <ul className="mt-5 flex-1 space-y-2.5">
                   {t.perks.map((p) => (
                     <li
                       key={p}
-                      className="flex gap-2 border-b border-line pb-2.5 text-[13px] text-t2"
+                      className="flex gap-2 border-b border-zinc-200 pb-2.5 text-[13px] text-ink/60"
                     >
                       <span className="text-brand">✦</span>
                       {p}
@@ -93,7 +93,7 @@ export function Patreon() {
                   className={`mt-6 rounded-md py-3 text-center font-mono text-[11px] font-bold uppercase tracking-label transition-colors ${
                     t.feat
                       ? "bg-brand text-ink"
-                      : "border border-line text-t1 hover:border-brand hover:text-brand"
+                      : "border border-zinc-200 text-ink hover:border-brand hover:text-brand"
                   }`}
                 >
                   Apoiar no Patreon

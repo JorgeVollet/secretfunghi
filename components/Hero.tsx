@@ -34,7 +34,7 @@ export function Hero() {
         className="absolute inset-0 -z-10"
       >
         <CellsField />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-bg/80 to-bg" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white" />
       </motion.div>
 
       <div className="pointer-events-none absolute -top-32 left-1/2 -z-10 h-96 w-96 -translate-x-1/2 rounded-full bg-brand/10 blur-[120px]" />
@@ -71,7 +71,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7 }}
-          className="mt-5 md:mt-8 max-w-sm md:max-w-md text-[14px] md:text-[15px] leading-relaxed text-t2"
+          className="mt-5 md:mt-8 max-w-sm md:max-w-md text-[14px] md:text-[15px] leading-relaxed text-ink/60"
         >
           Vestuário, cultura e cogumelos funcionais. Capacidade de ver além de
           onde chega o olhar. Unlock your mind.
@@ -100,7 +100,7 @@ export function Hero() {
         className="absolute bottom-6 left-1/2 -translate-x-1/2"
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="font-mono text-[9px] uppercase tracking-label text-t3">
+          <span className="font-mono text-[9px] uppercase tracking-label text-ink/40">
             Role
           </span>
           <motion.span

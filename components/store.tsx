@@ -59,12 +59,12 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [cartOpen, setCartOpen] = useState(false);
   const [quickView, setQuickView] = useState<Product | null>(null);
 
-  /* lê apenas o flag de anamnese de entrada no primeiro render do cliente */
+  /* lê o flag de anamnese de entrada no primeiro render do cliente */
   useEffect(() => {
     try {
-      setIntroAnamneseDone(
-        localStorage.getItem(LS_ANAMNESE_INTRO) === "done"
-      );
+      const done = localStorage.getItem(LS_ANAMNESE_INTRO) === "done";
+      setIntroAnamneseDone(done);
+      if (done) setCogumeloAnamneseOk(true);
     } catch {
       /* localStorage indisponível — segue com os defaults */
     }

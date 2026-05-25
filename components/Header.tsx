@@ -62,7 +62,7 @@ export function Header() {
               <a
                 key={l.href}
                 href={l.href}
-                className="group relative font-mono text-[11px] uppercase tracking-wider text-t2 transition-colors hover:text-t1"
+                className="group relative font-mono text-[11px] uppercase tracking-wider text-brand transition-colors hover:text-brand/70"
               >
                 {l.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-brand transition-all duration-300 group-hover:w-full" />
@@ -76,13 +76,13 @@ export function Header() {
             <button
               onClick={openCart}
               aria-label="Abrir carrinho"
-              className="relative flex h-10 items-center gap-2 rounded-md border border-line px-3 md:px-3.5 font-mono text-[11px] uppercase tracking-wider text-t1 transition-colors hover:border-brand hover:text-brand"
+              className="group relative flex h-10 items-center gap-2 rounded-md border border-brand px-3 md:px-3.5 font-mono text-[11px] uppercase tracking-wider text-brand transition-colors hover:bg-brand hover:text-[#ebdfc6]"
             >
               <span className="hidden sm:inline">Carrinho</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
               </svg>
-              <span className="grid h-5 min-w-5 place-items-center rounded-full bg-brand px-1 text-[10px] font-bold text-ink">
+              <span className="grid h-5 min-w-5 place-items-center rounded-full bg-brand px-1 text-[10px] font-bold text-ink transition-colors group-hover:bg-white group-hover:text-ink">
                 {cartCount}
               </span>
             </button>
@@ -90,7 +90,7 @@ export function Header() {
             <button
               onClick={() => setMenuOpen(true)}
               aria-label="Abrir menu"
-              className="grid h-10 w-10 place-items-center rounded-md border border-line text-t1 transition-colors hover:border-brand lg:hidden"
+              className="grid h-10 w-10 place-items-center rounded-md border border-brand text-brand transition-colors hover:border-brand/70 lg:hidden"
             >
               <span className="space-y-[5px]">
                 <span className="block h-px w-5 bg-current" />

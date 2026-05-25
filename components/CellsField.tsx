@@ -139,7 +139,7 @@ void main() {
   float near = 1.0 - smoothstep(0.0, uMouseRadius, dist);
   col += uEdge * near * uMouseActive * 0.11;
 
-  gl_FragColor = vec4(col, 1.0);
+  gl_FragColor = vec4(col, 0.5);
 }
 `;
 
@@ -166,9 +166,9 @@ export interface CellsFieldProps {
   edgeColor?: [number, number, number];
 }
 
-const DEFAULT_COLOR1: [number, number, number] = [0.341, 0.110, 0.086]; // #571c16
-const DEFAULT_COLOR2: [number, number, number] = [0.608, 0.490, 0.380]; // #9b7d61
-const DEFAULT_EDGE: [number, number, number] = [0.341, 0.110, 0.086];   // #571c16
+const DEFAULT_COLOR1: [number, number, number] = [0.922, 0.875, 0.776]; // #ebdfc6
+const DEFAULT_COLOR2: [number, number, number] = [0.341, 0.110, 0.086]; // #571c16 brand
+const DEFAULT_EDGE: [number, number, number] = [0.922, 0.875, 0.776];   // #ebdfc6
 
 export function CellsField({
   fillStyle = "cells",
