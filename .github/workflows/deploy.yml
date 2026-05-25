@@ -24,5 +24,6 @@ jobs:
             cd /var/www/segredo-fungi
             git pull
             npm ci
+            rm -rf .next
             npm run build
             pm2 restart segredo-fungi
