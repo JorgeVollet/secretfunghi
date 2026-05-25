@@ -37,7 +37,7 @@ export function Som() {
   return (
     <section
       id="som"
-      className="relative overflow-hidden border-t border-line bg-surface/40 py-16 md:py-24 lg:py-32"
+      className="relative overflow-hidden border-t border-line bg-surface py-16 md:py-24 lg:py-32"
     >
       {/* camada 1: imagem de fundo com 10% de opacidade */}
       <div className="absolute inset-0 -z-20">

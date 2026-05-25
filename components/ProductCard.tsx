@@ -62,10 +62,10 @@ export function ProductCard({ product }: { product: Product }) {
 
       {/* info */}
       <div className="p-4">
-        <span className="font-mono text-[9px] uppercase tracking-wider" style={{ color: "#30261e" }}>
+        <span className="font-mono text-[9px] uppercase tracking-wider text-brand/50">
           {product.line}
         </span>
-        <h3 className="mt-1.5 font-heading text-base font-medium" style={{ color: "#442b21" }}>
+        <h3 className="mt-1.5 font-heading text-base font-medium text-brand">
           {product.name}
         </h3>
         <div className="mt-2 font-mono text-sm text-brand">

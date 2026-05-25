@@ -15,7 +15,7 @@ export function LinhaSegredo() {
   return (
     <section
       id="segredo"
-      className="relative overflow-hidden border-t border-line bg-surface/40 py-16 md:py-24 lg:py-32"
+      className="relative overflow-hidden border-t border-line bg-surface py-16 md:py-24 lg:py-32"
     >
       {/* glow */}
       <div className="pointer-events-none absolute right-0 top-0 h-80 w-80 rounded-full bg-brand/10 blur-[120px]" />
