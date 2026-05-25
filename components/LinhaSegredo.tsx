@@ -15,6 +15,7 @@ export function LinhaSegredo() {
   return (
     <section
       id="segredo"
+      style={{ scrollMarginTop: '-29px' }}
       className="relative overflow-hidden border-t border-line bg-surface/40 py-16 md:py-24 lg:py-32"
     >
       {/* glow */}

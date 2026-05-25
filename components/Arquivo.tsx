@@ -20,6 +20,7 @@ export function Arquivo() {
   return (
     <section
       id="arquivo"
+      style={{ scrollMarginTop: '-36px' }}
       className="border-t border-line bg-bg py-16 md:py-24 lg:py-32"
     >
       <div className="mx-auto max-w-[1280px] px-5 md:px-8">

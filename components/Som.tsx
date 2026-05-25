@@ -37,6 +37,7 @@ export function Som() {
   return (
     <section
       id="som"
+      style={{ scrollMarginTop: '72px' }}
       className="relative overflow-hidden border-t border-line bg-surface/40 py-16 md:py-24 lg:py-32"
     >
       {/* camada 1: imagem de fundo com 10% de opacidade */}

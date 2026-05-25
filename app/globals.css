@@ -23,13 +23,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 64px; /* compensa o header fixo nas âncoras */
-}
-
-@media (min-width: 768px) {
-  html {
-    scroll-padding-top: 86px;
-  }
+  scroll-padding-top: 0px;
 }
 
 body {

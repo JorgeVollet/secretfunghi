@@ -16,7 +16,7 @@ const VIDEOS = [
 
 export function Studios() {
   return (
-    <section id="studios" className="border-t border-line py-16 md:py-24 lg:py-32">
+    <section id="studios" style={{ scrollMarginTop: '-31px' }} className="border-t border-line py-16 md:py-24 lg:py-32">
       <div className="mx-auto max-w-[1280px] px-5 md:px-8">
         <div className="flex flex-col justify-between gap-4 md:gap-6 md:flex-row md:items-end">
           <div>

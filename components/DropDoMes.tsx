@@ -35,7 +35,7 @@ const DROP_IMAGES = [
 
 export function DropDoMes() {
   return (
-    <section id="drop" className="relative bg-ink py-16 md:py-24 lg:py-32">
+    <section id="drop" style={{ scrollMarginTop: '-35px' }} className="relative bg-ink py-16 md:py-24 lg:py-32">
       <div className="absolute inset-0 z-0">
         <Particles
           particleColors={["#ffffff"]}
