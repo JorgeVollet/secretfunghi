@@ -52,7 +52,7 @@ export function Hero() {
           O Segredo Fungi® · Worldwide · Since 2023
         </motion.span>
 
-        <h1 className="mt-5 md:mt-7 ds-display text-[clamp(3rem,14vw,11rem)]">
+        <h1 className="mt-5 md:mt-7 ds-display text-[clamp(3rem,14vw,11rem)] text-ink">
           {WORDS.map((w, i) => (
             <span key={w} className="block overflow-hidden">
               <motion.span
