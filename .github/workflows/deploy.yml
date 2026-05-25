@@ -22,7 +22,8 @@ jobs:
           port: 2222
           script: |
             cd /var/www/segredo-fungi
-            git pull
+            git fetch origin
+            git reset --hard origin/main
             npm ci
             rm -rf .next
             npm run build
