@@ -27,15 +27,20 @@ export function Sobre() {
           <Reveal delay={0.1}>
             <div className="mt-5 md:mt-6 space-y-4 text-[14px] md:text-[15px] leading-relaxed text-ink/70">
               <p>
-                O Segredo Fungi nasceu em 2023, no Brasil, no encontro entre
-                cultura de rua, estética Y2K e a curiosidade pelo mundo dos
-                cogumelos.
+                Não estamos aqui para vender fórmulas prontas de felicidade,
+                espiritualidade ou cura. Estamos aqui para quebrar tabus,
+                resgatar saberes ancestrais e provocar um novo olhar sobre
+                corpo, mente e alma.
               </p>
               <p>
-                Mais que uma marca de vestuário, é um convite a olhar além — a
-                documentar, observar e desbloquear a própria mente. Vestuário,
-                som, vídeo e uma linha de cogumelos funcionais sob o mesmo
-                símbolo.
+                Acreditamos que consciência não é tendência. É um estilo de
+                vida. Que espiritualidade sem verdade vira performance.
+              </p>
+              <p>
+                Somos ponte entre o ancestral e o contemporâneo. Entre ciência,
+                presença, expansão e vida real. Criamos um espaço voltado para
+                quem busca mais lucidez, mais equilíbrio e menos ruído. Mais
+                humano, mais vivo, mais desperto.
               </p>
             </div>
           </Reveal>
